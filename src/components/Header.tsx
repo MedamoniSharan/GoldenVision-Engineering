@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { mainNavigation } from '@/data/navigation';
 import type { NavLink } from '@/types';
+import { SITE_TAGLINE } from '@/data/siteConfig';
+import { LOGO_SRC } from '@/utils/assets';
 
 function NavDropdown({ item }: { item: NavLink }) {
   const [open, setOpen] = useState(false);
@@ -70,44 +72,41 @@ export default function Header() {
       </button>
 
       <nav
-        className={`d-flex align-items-center flex-wrap transitionNav site-nav ${mobileOpen ? 'mobile-open' : ''}`}
+        className={`site-nav transitionNav ${mobileOpen ? 'mobile-open' : ''}`}
       >
-        <div className="logo">
-          <a href="/">
-            <img
-              src="/assets/images/Moldtek-Technologies-Logo.svg"
-              alt="Moldtek Technologies Logo"
-              style={{ marginBottom: '8px' }}
-            />
-          </a>
+        <div className="nav-col nav-col-logo">
+          <div className="logo-tab">
+            <a href="/" className="logo">
+              <img src={LOGO_SRC} alt="Golden Vision Engineering Logo" />
+              <span className="logo-tagline">{SITE_TAGLINE}</span>
+            </a>
+          </div>
         </div>
 
-        <ul className="navMenu aiana-d-md-none list-unstyled d-flex align-items-center flex-grow-1 justify-content-center">
-          <li>
-            <div className="mega-menu-wrap transitionNav">
-              <ul className="mega-menu nav-pill list-unstyled d-flex align-items-center">
-                {mainNavigation.map((item) => (
-                  <NavDropdown key={item.label} item={item} />
-                ))}
-              </ul>
-            </div>
-          </li>
-        </ul>
+        <div className="nav-col nav-col-menu">
+          <ul className="mega-menu nav-pill list-unstyled">
+            {mainNavigation.map((item) => (
+              <NavDropdown key={item.label} item={item} />
+            ))}
+          </ul>
+        </div>
 
-        <ul className="aiana-social sm-sm-none list-unstyled d-flex" style={{ marginRight: '10px' }}>
-          <li>
-            <a href="#" aria-label="Language">
-              <img src="/assets/images/flag.png" alt="US Flag" style={{ height: '40px' }} />
-            </a>
-          </li>
-          <li>
-            <a href="/contact-us/">
-              <button type="button" className="aiana-button contactbutton">
-                Contact Us
-              </button>
-            </a>
-          </li>
-        </ul>
+        <div className="nav-col nav-col-actions">
+          <ul className="aiana-social list-unstyled">
+            <li>
+              <a href="#" aria-label="Language">
+                <img src="/assets/images/flag.png" alt="US Flag" className="nav-flag" />
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <button type="button" className="aiana-button contactbutton">
+                  Contact Us
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </>
   );

@@ -8,7 +8,7 @@ export default function GlobalMap() {
         <div className="map-container">
           <img
             src="/assets/images/Map-Img-10.svg"
-            alt="Moldtek Technologies global presence map"
+            alt="Golden Vision Engineering global presence map"
             className="world-map"
           />
         </div>

@@ -1,5 +1,7 @@
 import HeroSection from '@/components/HeroSection';
-import ServiceTabs from '@/components/ServiceTabs';
+import FeaturedServices from '@/components/FeaturedServices';
+import TeklaSection from '@/components/TeklaSection';
+import ServicesSection from '@/components/ServicesSection';
 import CaseStudies from '@/components/CaseStudies';
 import NewsAndBlog from '@/components/NewsAndBlog';
 import GlobalMap from '@/components/GlobalMap';
@@ -10,7 +12,9 @@ export default function App() {
     <div id="scroll-content">
       <div className="scroll-content">
         <HeroSection />
-        <ServiceTabs />
+        <FeaturedServices />
+        <TeklaSection />
+        <ServicesSection />
         <CaseStudies />
         <NewsAndBlog />
         <GlobalMap />

@@ -27,16 +27,6 @@ export interface ServiceHighlight {
   href: string;
 }
 
-export interface ServiceTab {
-  id: string;
-  label: string;
-  heading: string;
-  headingAccent?: string;
-  stats: StatItem[];
-  highlights: ServiceHighlight[];
-  industries: string[];
-}
-
 export interface CaseStudy {
   title: string;
   image: string;

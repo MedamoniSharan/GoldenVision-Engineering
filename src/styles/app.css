@@ -12,32 +12,101 @@
 }
 
 /* Hero header block */
-.hero-header {
-  background-color: #ffffff;
+.hero-header,
+.hero-header#top,
+header.hero-header {
+  background-color: transparent !important;
   position: relative;
 }
 
 .hero-header .site-nav {
-  z-index: 20;
-}
-
-.navMenu {
-  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: grid !important;
+  grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+  align-items: center;
+  width: 97%;
+  max-width: 1600px;
+  min-height: 88px;
+  padding: 0 8px;
   margin: 0;
-  padding: 0;
+  gap: 16px !important;
+  background: transparent !important;
+  justify-content: unset !important;
+  border-radius: 0;
 }
 
-.mega-menu-wrap {
-  background: transparent;
+.nav-col {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav-col-logo {
+  justify-content: flex-start;
+  align-self: stretch;
+}
+
+.nav-col-menu {
+  justify-content: center;
+}
+
+.nav-col-actions {
+  justify-content: flex-end;
+}
+
+.logo-tab {
+  background: #000000;
+  padding: 12px 28px 20px 20px;
+  border-bottom-right-radius: 52px;
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  margin-top: 0;
+}
+
+.hero-header .logo {
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.hero-header .logo img {
+  width: auto;
+  height: 72px;
+  max-width: 180px;
+  margin: 0;
+  display: block;
+  object-fit: contain;
+}
+
+.logo-tagline {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #c9a227;
+  max-width: 200px;
+  letter-spacing: 0.2px;
 }
 
 .mega-menu.nav-pill {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
   background: #ffffff;
-  border-radius: 20px;
-  padding: 4px 8px;
-  margin-bottom: 10px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin: 0;
   gap: 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  list-style: none;
 }
 
 .nav-item {
@@ -53,13 +122,14 @@
   font-family: 'Manrope', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  padding: 12px 18px;
+  padding: 10px 16px;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   white-space: nowrap;
+  line-height: 1.2;
 }
 
 .mega-menu-link:hover,
@@ -72,22 +142,40 @@
   opacity: 0.6;
 }
 
-.aiana-social {
-  gap: 8px;
+.nav-col-actions .aiana-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-col-actions .aiana-social li {
+  display: flex;
   align-items: center;
 }
 
+.nav-flag {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 button.aiana-button.contactbutton {
-  padding: 11px 28px;
+  padding: 11px 24px;
   border-radius: 13px;
   background: #0c0c0c;
   border: 1px solid #0c0c0c;
   height: auto;
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
 button.aiana-button.contactbutton:hover {
@@ -170,7 +258,7 @@ button.aiana-button.contactbutton:hover {
 
 /* Hero slider */
 .home-slider {
-  margin-top: -45px;
+  margin-top: 0;
   padding: 0 1.5%;
   position: relative;
   z-index: 10;
@@ -488,6 +576,299 @@ button.aiana-button.contactbutton:hover {
   object-fit: contain;
 }
 
+.services-intro {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+  padding: 1rem 2rem 2rem;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  scroll-margin-top: 120px;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222626;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.service-card p,
+.featured-service-body p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.service-summary,
+.featured-summary {
+  font-weight: 600;
+  color: #0080c2 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.service-card-header {
+  position: relative;
+}
+
+.tekla-chip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #c9a227;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.service-features-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 0.4rem;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.service-features-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0080c2;
+  font-weight: 700;
+}
+
+.service-features-list--compact li:nth-child(n + 5) {
+  display: none;
+}
+
+/* Featured services */
+.featured-services {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #091f2a 0%, #0d2a38 100%);
+}
+
+.featured-services-header {
+  margin-bottom: 2.5rem;
+}
+
+.featured-services .section-heading-lg,
+.featured-services .services-intro {
+  color: #ffffff;
+}
+
+.featured-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.featured-service-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.featured-service-top {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.featured-service-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-service-body {
+  padding: 1.5rem;
+}
+
+.featured-service-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222626;
+  margin-bottom: 0.5rem;
+}
+
+.featured-service-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0080c2;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.featured-service-link:hover {
+  color: #c9a227;
+}
+
+/* Tekla section */
+.tekla-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.tekla-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.tekla-badge {
+  display: inline-block;
+  background: #091f2a;
+  color: #c9a227;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.tekla-title {
+  margin-bottom: 1rem;
+}
+
+.tekla-tagline {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.tekla-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tekla-visual {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.tekla-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tekla-visual-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(9, 31, 42, 0.9));
+}
+
+.tekla-visual-overlay p {
+  color: #c9a227;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.tekla-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tekla-highlight-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border-left: 4px solid #c9a227;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tekla-highlight-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222626;
+  margin-bottom: 0.5rem;
+}
+
+.tekla-highlight-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+.tekla-workflow-steps {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tekla-workflow-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: #0080c2;
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.step-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444;
+}
+
 .highlights-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -632,8 +1013,75 @@ button.aiana-button.contactbutton:hover {
 }
 
 /* Footer */
+.footer-brand-name {
+  margin: 14px 0 6px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #c9a227;
+}
+
+.footer-brand-tagline {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+  max-width: 280px;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 0;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-social-link:hover {
+  background: rgba(201, 162, 39, 0.2);
+  transform: translateY(-2px);
+}
+
+.footer-social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.footer-social-link--text {
+  width: auto;
+  min-width: 36px;
+  padding: 0 10px;
+  border-radius: 18px;
+}
+
+.footer-social-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #c9a227;
+  white-space: nowrap;
+}
+
 .footerlogos {
-  width: 250px;
+  width: auto;
+  height: 100px;
+  max-width: 220px;
+  object-fit: contain;
 }
 
 .footer-h4 {
@@ -664,39 +1112,82 @@ button.aiana-button.contactbutton:hover {
   }
 }
 
+@media (max-width: 1200px) {
+  .mega-menu-link,
+  .nav-link-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-header .site-nav {
+    grid-template-columns: auto 1fr auto;
+    gap: 8px !important;
+  }
+
+  .logo-tab {
+    padding: 14px 20px 20px 16px;
+    border-bottom-right-radius: 36px;
+  }
+
+  .hero-header .logo img {
+    width: 130px;
+    height: 60px;
+  }
+
+  .logo-tagline {
+    font-size: 10px;
+    max-width: 160px;
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-menu-trigger {
     display: flex;
   }
 
-  .site-nav {
+  .hero-header .site-nav {
+    display: flex !important;
     flex-direction: column;
+    align-items: stretch;
     padding: 1rem;
-    top: 3px !important;
+    position: relative;
+    left: auto;
+    transform: none;
+    width: 100%;
   }
 
-  .site-nav:not(.mobile-open) .navMenu,
-  .site-nav:not(.mobile-open) .aiana-social {
+  .hero-header .site-nav:not(.mobile-open) .nav-col-menu,
+  .hero-header .site-nav:not(.mobile-open) .nav-col-actions {
     display: none;
   }
 
-  .site-nav.mobile-open {
+  .hero-header .site-nav.mobile-open {
     position: fixed;
     inset: 0;
     background: #ffffff;
     z-index: 250;
     overflow-y: auto;
-    align-content: flex-start;
   }
 
-  .site-nav.mobile-open .navMenu {
-    flex-direction: column;
+  .nav-col-logo,
+  .nav-col-menu,
+  .nav-col-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo-tab {
+    border-bottom-right-radius: 20px;
+    justify-content: center;
     width: 100%;
   }
 
   .mega-menu.nav-pill {
     flex-direction: column;
     width: 100%;
+    border-radius: 20px;
   }
 
   .dropdown-menu {
@@ -764,8 +1255,19 @@ button.aiana-button.contactbutton:hover {
     display: none;
   }
 
-  .highlights-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .highlights-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
     padding: 1rem;
+  }
+
+  .featured-services-grid,
+  .tekla-grid,
+  .tekla-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .tekla-workflow-steps {
+    grid-template-columns: 1fr;
   }
 }

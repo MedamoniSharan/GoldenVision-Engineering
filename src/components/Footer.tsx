@@ -1,4 +1,15 @@
 import { footerLinkGroups } from '@/data/navigation';
+import {
+  CONTACT_ADDRESS,
+  CONTACT_EMAIL,
+  CONTACT_MAP_URL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_HREF,
+  SITE_NAME,
+  SITE_TAGLINE,
+} from '@/data/siteConfig';
+import { LOGO_SRC } from '@/utils/assets';
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   return (
@@ -8,12 +19,15 @@ export default function Footer() {
           <div className="row">
             <div className="col-md-4 sm-sm-100 tab-50">
               <div className="block">
-                <div className="logo">
+                <div className="logo footer-brand">
                   <img
-                    src="/assets/images/Moldtek-Technologies-Logo.svg"
-                    alt="Moldtek Technologies Logo"
+                    src={LOGO_SRC}
+                    alt="Golden Vision Engineering Logo"
                     className="footerlogos"
                   />
+                  <p className="footer-brand-name">{SITE_NAME}</p>
+                  <p className="footer-brand-tagline">{SITE_TAGLINE}</p>
+                  <SocialLinks />
                 </div>
               </div>
             </div>
@@ -56,23 +70,28 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className="col-8 sm-sm-100">
-                  <div className="block">
+                  <div className="block" id="contact">
                     <h4 className="aiana-h4 footer-h4">Contact Info</h4>
                     <ul className="footer-list aiana-menu list-unstyled">
                       <li className="anchorHover">
-                        <a href="tel:+914040300328" className="aiana-desc">
-                          + 91-40-40300300, 328
+                        <a href={CONTACT_PHONE_HREF} className="aiana-desc">
+                          {CONTACT_PHONE}
                         </a>
                       </li>
                       <li className="anchorHover">
-                        <a href="mailto:info@moldtekengineering.com" className="aiana-desc">
-                          info@moldtekengineering.com
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="aiana-desc">
+                          {CONTACT_EMAIL}
                         </a>
                       </li>
                       <li className="anchorHover">
-                        <span className="aiana-desc">
-                          Plot No. 12, Software Units Layout, Madhapur, Hyderabad - 500081, India
-                        </span>
+                        <a
+                          href={CONTACT_MAP_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="aiana-desc"
+                        >
+                          {CONTACT_ADDRESS}
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -84,7 +103,7 @@ export default function Footer() {
 
         <div className="container h-100 d-flex justify-content-between copyright-bar">
           <p className="aiana-desc mb-0">
-            © {new Date().getFullYear()} Moldtek Technologies Ltd. All rights reserved.
+            © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>
         </div>
       </footer>

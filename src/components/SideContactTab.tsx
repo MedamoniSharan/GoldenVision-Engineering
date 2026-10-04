@@ -1,6 +1,8 @@
+import { CONTACT_PHONE_HREF } from '@/data/siteConfig';
+
 export default function SideContactTab() {
   return (
-    <a href="/contact-us/" className="side-contact-tab">
+    <a href={CONTACT_PHONE_HREF} className="side-contact-tab">
       Contact Us
     </a>
   );

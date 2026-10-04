@@ -1,36 +1,29 @@
-import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
-import { serviceTabs, standardLogos } from '@/data/siteContent';
+import { businessServices } from '@/data/businessServices';
+import { companyStats, standardLogos } from '@/data/siteContent';
 import StatsCounter from './StatsCounter';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export default function ServiceTabs() {
-  const [activeTab, setActiveTab] = useState(serviceTabs[0].id);
-  const active = serviceTabs.find((t) => t.id === activeTab) ?? serviceTabs[0];
-
+export default function ServicesSection() {
   return (
-    <div className="container boxlayouts pt-4">
+    <div className="container boxlayouts pt-4" id="services">
       <div className="tabs">
-        <div className="tabmain row">
-          <div className="tabs__labels col-md-12">
-            {serviceTabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                className={`tabs__label ${activeTab === tab.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <div className="tabs__content homedesign">
           <div className="tabs__panel">
-            <StatsCounter stats={active.stats} />
+            <div className="container key">
+              <h3 className="fonth3 section-heading-lg">
+                Our <span className="accent">Business</span>
+              </h3>
+              <p className="services-intro">
+                Golden Vision Engineering specializes in structural steel detailing, connection
+                design, miscellaneous metals, PEMB design, BIM integration, and estimation —
+                all powered by Tekla Structures and delivered to golden standards.
+              </p>
+            </div>
+
+            <StatsCounter stats={companyStats} />
 
             <div className="container key pbmob standards-section">
               <div className="industries-we-serve indusmob">
@@ -65,31 +58,29 @@ export default function ServiceTabs() {
               </div>
             </div>
 
-            <div className="container key">
-              <h3 className="fonth3 section-heading-lg">
-                {active.heading}
-                {active.headingAccent && (
-                  <>
-                    <br />
-                    <span className="accent">{active.headingAccent}</span>
-                  </>
-                )}
-              </h3>
-            </div>
-
             <section className="aiana-blog mt-0">
-              <h2 className="text-left titletext pl-50 section-subheading">Key Highlights</h2>
+              <h2 className="text-left titletext pl-50 section-subheading">All Services</h2>
             </section>
 
             <section className="our-products-2 mt-6">
-              <div className="highlights-grid">
-                {active.highlights.map((item) => (
-                  <a key={item.title} href={item.href} className="highlight-card">
-                    <div className="highlight-image">
-                      <img src={item.image} alt={item.title} loading="lazy" />
+              <div className="services-grid">
+                {businessServices.map((service) => (
+                  <article key={service.id} id={service.id} className="service-card">
+                    <div className="service-card-header">
+                      <div className="highlight-image">
+                        <img src={service.image} alt={service.title} loading="lazy" />
+                      </div>
+                      {service.teklaPowered && <span className="tekla-chip">Tekla</span>}
                     </div>
-                    <h3>{item.title}</h3>
-                  </a>
+                    <h3>{service.title}</h3>
+                    <p className="service-summary">{service.summary}</p>
+                    <p>{service.description}</p>
+                    <ul className="service-features-list service-features-list--compact">
+                      {service.features.slice(0, 4).map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+                  </article>
                 ))}
               </div>
             </section>
@@ -100,7 +91,14 @@ export default function ServiceTabs() {
                   Industries <span className="accent">We Serve</span>
                 </h3>
                 <div className="industries-tags">
-                  {active.industries.map((industry) => (
+                  {[
+                    'Commercial Buildings',
+                    'Industrial Facilities',
+                    'Infrastructure',
+                    'Pre-Engineered Buildings',
+                    'Warehousing & Logistics',
+                    'Oil & Gas Structures',
+                  ].map((industry) => (
                     <span key={industry} className="industry-tag">
                       {industry}
                     </span>
