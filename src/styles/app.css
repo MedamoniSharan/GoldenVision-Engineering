@@ -5,6 +5,35 @@
 @import '/assets/dist/theme/css/responsive.css';
 @import '/assets/dist/theme/css/map.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
 /* React-specific overrides and additions */
 
 #root {
@@ -22,16 +51,17 @@ header.hero-header {
 .hero-header .site-nav {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  transform: none;
   z-index: 30;
   display: grid !important;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: flex-start;
-  width: 97%;
-  max-width: 1600px;
-  min-height: 88px;
-  padding: 8px 0 0;
+  grid-template-columns: auto 1fr auto;
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  padding: 0;
   margin: 0;
   gap: 0;
   background: transparent !important;
@@ -45,36 +75,37 @@ header.hero-header {
 }
 
 .nav-col-logo {
-  grid-column: 1;
-  justify-self: start;
   justify-content: flex-start;
-}
-
-.nav-center-group {
-  grid-column: 2;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 6px;
 }
 
 .nav-col-menu {
   justify-content: center;
-  padding: 0;
+  padding-top: 0;
 }
 
 .nav-col-actions {
   justify-content: flex-end;
-  flex-shrink: 0;
+  padding: 0;
 }
 
 .logo-tab {
   background: #000000;
-  padding: 10px 24px 16px 16px;
-  border-bottom-right-radius: 52px;
+  padding: 10px 42px 12px 20px;
+  border-bottom-right-radius: 64px;
   display: flex;
   align-items: center;
-  margin-top: 0;
+  height: 100%;
+  min-height: 86px;
+}
+
+.actions-tab {
+  background: #ffffff;
+  padding: 10px 22px 12px 42px;
+  border-bottom-left-radius: 64px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 86px;
 }
 
 .hero-header .logo {
@@ -82,14 +113,14 @@ header.hero-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
+  gap: 4px;
   text-decoration: none;
 }
 
 .hero-header .logo img {
   width: auto;
-  height: 72px;
-  max-width: 180px;
+  height: 48px;
+  max-width: 150px;
   margin: 0;
   display: block;
   object-fit: contain;
@@ -97,11 +128,11 @@ header.hero-header {
 
 .logo-tagline {
   font-family: 'Manrope', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.3;
   color: #c9a227;
-  max-width: 200px;
+  max-width: 170px;
   letter-spacing: 0.2px;
 }
 
@@ -111,13 +142,11 @@ header.hero-header {
   flex-wrap: nowrap;
   background: #ffffff;
   border-radius: 999px;
-  padding: 6px 10px;
+  padding: 4px 10px;
   margin: 0;
   gap: 0;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   list-style: none;
-  position: relative;
-  top: 2px;
 }
 
 .nav-item {
@@ -133,7 +162,7 @@ header.hero-header {
   font-family: 'Manrope', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  padding: 10px 16px;
+  padding: 11px 16px;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
@@ -160,7 +189,6 @@ header.hero-header {
   gap: 12px;
   margin: 0;
   padding: 0;
-  flex-shrink: 0;
 }
 
 .nav-flag-link,
@@ -173,37 +201,36 @@ header.hero-header {
 }
 
 .nav-flag {
-  width: 48px;
-  height: 40px;
+  width: 40px;
+  height: 28px;
   display: block;
   object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  border-radius: 2px;
 }
 
 button.aiana-button.contactbutton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  padding: 0 22px;
-  border-radius: 13px;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
   background: #0c0c0c;
   border: 1px solid #0c0c0c;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
 }
 
 button.aiana-button.contactbutton:hover {
-  background: #ffffff;
-  color: #0c0c0c;
+  background: #163a5f;
+  color: #ffffff;
 }
 
 .dropdown-menu {
@@ -1212,21 +1239,30 @@ button.aiana-button.contactbutton:hover {
 
 @media (max-width: 992px) {
   .hero-header .site-nav {
-    gap: 8px;
-  }
-
-  .nav-center-group {
+    grid-template-columns: auto 1fr auto;
     gap: 10px;
   }
 
+  .nav-col-menu,
+  .nav-col-actions {
+    padding-top: 0;
+  }
+
   .logo-tab {
-    padding: 14px 20px 20px 16px;
-    border-bottom-right-radius: 36px;
+    padding: 10px 28px 12px 16px;
+    border-bottom-right-radius: 48px;
+    min-height: 76px;
+  }
+
+  .actions-tab {
+    padding: 10px 16px 12px 28px;
+    border-bottom-left-radius: 48px;
+    min-height: 76px;
   }
 
   .hero-header .logo img {
-    width: 130px;
-    height: 60px;
+    width: auto;
+    height: 42px;
   }
 
   .logo-tagline {
@@ -1251,7 +1287,8 @@ button.aiana-button.contactbutton:hover {
     width: 100%;
   }
 
-  .hero-header .site-nav:not(.mobile-open) .nav-center-group {
+  .hero-header .site-nav:not(.mobile-open) .nav-col-menu,
+  .hero-header .site-nav:not(.mobile-open) .nav-col-actions {
     display: none;
   }
 
@@ -1268,12 +1305,22 @@ button.aiana-button.contactbutton:hover {
   .nav-col-actions {
     justify-content: center;
     width: 100%;
+    padding-top: 0;
+    padding-right: 0;
   }
 
   .logo-tab {
     border-bottom-right-radius: 20px;
     justify-content: center;
     width: 100%;
+  }
+
+  .actions-tab {
+    border-bottom-left-radius: 20px;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 16px;
+    min-height: 0;
   }
 
   .mega-menu.nav-pill {

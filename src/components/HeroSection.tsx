@@ -7,8 +7,8 @@ export default function HeroSection() {
   return (
     <>
       <SideContactTab />
+      <Header />
       <header id="top" className="hero-header">
-        <Header />
         <HeroSlider />
         <ClientLogos />
       </header>
