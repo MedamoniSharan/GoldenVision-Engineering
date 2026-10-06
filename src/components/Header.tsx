@@ -83,29 +83,31 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="nav-col nav-col-menu">
-          <ul className="mega-menu nav-pill list-unstyled">
-            {mainNavigation.map((item) => (
-              <NavDropdown key={item.label} item={item} />
-            ))}
-          </ul>
-        </div>
+        <div className="nav-center-group">
+          <div className="nav-col nav-col-menu">
+            <ul className="mega-menu nav-pill list-unstyled">
+              {mainNavigation.map((item) => (
+                <NavDropdown key={item.label} item={item} />
+              ))}
+            </ul>
+          </div>
 
-        <div className="nav-col nav-col-actions">
-          <ul className="aiana-social list-unstyled">
-            <li>
-              <a href="#" aria-label="Language">
-                <img src="/assets/images/flag.png" alt="US Flag" className="nav-flag" />
+          <div className="nav-col nav-col-actions">
+            <div className="nav-actions">
+              <a href="#" className="nav-flag-link" aria-label="India">
+                <img
+                  src="/assets/images/flag-india.svg"
+                  alt="India flag"
+                  className="nav-flag"
+                />
               </a>
-            </li>
-            <li>
-              <a href="#contact">
+              <a href="#contact" className="nav-contact-link">
                 <button type="button" className="aiana-button contactbutton">
                   Contact Us
                 </button>
               </a>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </nav>
     </>
