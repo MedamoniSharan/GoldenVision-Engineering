@@ -1894,11 +1894,10 @@ button.aiana-button.contactbutton:hover {
   }
 }
 
-/* Image carousel gallery */
+/* Portfolio gallery */
 .image-carousel {
   width: 100%;
-  overflow: hidden;
-  padding: 48px 0 54px;
+  padding: 40px 0 48px;
   color: #0c0c0c;
   background: #ffffff;
 }
@@ -1909,141 +1908,69 @@ button.aiana-button.contactbutton:hover {
 }
 
 .portfolio-intro {
-  max-width: 720px;
-  margin: 0 auto 28px;
+  max-width: 640px;
+  margin: 0 auto 24px;
 }
 
-.image-carousel__viewport {
-  width: 100%;
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.portfolio-card {
   overflow: hidden;
+  border-radius: 12px;
+  background: #f6f7f8;
+  border: 1px solid #ececec;
 }
 
-.image-carousel__track {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: max-content;
-  transform: translateX(var(--carousel-offset, 0px));
-  transition: transform 600ms ease;
-}
-
-.image-carousel__slide {
-  position: relative;
-  flex: 0 0 calc((100vw - 40px) / 3);
-  max-width: 425px;
-  overflow: hidden;
-  border-radius: 20px;
+.portfolio-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 150px !important;
+  max-width: none !important;
+  object-fit: cover !important;
   margin: 0;
 }
 
-.image-carousel__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 16px 18px 14px;
-  background: linear-gradient(transparent, rgba(8, 8, 8, 0.82));
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.portfolio-card-copy {
+  padding: 10px 12px 12px;
 }
 
-.image-carousel__caption strong {
-  font-size: 16px;
-  font-weight: 700;
+.portfolio-card-copy h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #111;
 }
 
-.image-carousel__caption span {
-  font-size: 13px;
+.portfolio-card-copy p {
+  margin: 0;
+  font-size: 12px;
   line-height: 1.4;
-  opacity: 0.9;
-}
-
-.image-carousel__image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1020 / 736;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 300ms ease;
-}
-
-.image-carousel__slide:hover .image-carousel__image {
-  transform: scale(1.018);
-}
-
-.image-carousel__controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.image-carousel__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  color: #0c0c0c;
-  background: transparent;
-  border: 1px solid #0c0c0c;
-  border-radius: 30%;
-  cursor: pointer;
-  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
-}
-
-.image-carousel__button:hover,
-.image-carousel__button:focus-visible {
-  color: #fff;
-  background: #0c0c0c;
-  outline: none;
-  transform: translateY(-1px);
-}
-
-.image-carousel__button:focus-visible {
-  box-shadow: 0 0 0 3px rgba(12, 12, 12, 0.18);
-}
-
-.image-carousel__status {
-  width: 4px;
-  height: 4px;
-  border-radius: 999px;
-  background: #d3d3d3;
+  color: #5b6166;
 }
 
 @media (max-width: 980px) {
-  .image-carousel__slide {
-    flex-basis: calc((100vw - 30px) / 2);
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 600px) {
   .image-carousel {
-    padding-bottom: 48px;
+    padding: 28px 0 36px;
   }
 
-  .image-carousel__slide {
-    flex-basis: calc(100vw - 32px);
-  }
-
-  .image-carousel__track {
-    gap: 10px;
+  .portfolio-card img {
+    height: 140px !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .image-carousel__track,
-  .image-carousel__image,
-  .image-carousel__button {
-    transition: none;
   }
 }
 
