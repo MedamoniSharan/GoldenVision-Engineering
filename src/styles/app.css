@@ -40,6 +40,208 @@
   min-height: 100vh;
 }
 
+/* Theme CSS targets every <nav> (top/left/transform) and Bootstrap sets img { height: auto }.
+   Those unlayered rules beat Tailwind utilities, so the header must be styled here. */
+.gv-navbar {
+  position: sticky;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1000;
+  width: 100% !important;
+  height: 72px;
+  min-height: 72px;
+  transform: none !important;
+  background: #0c0c0c;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: 0;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.gv-navbar nav {
+  position: relative !important;
+  top: 0 !important;
+  left: auto !important;
+  transform: none !important;
+  width: auto !important;
+  min-height: 0;
+  height: auto;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  z-index: 1;
+  justify-content: flex-start;
+}
+
+.gv-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 24px;
+}
+
+.gv-navbar-left,
+.gv-navbar-right {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.gv-navbar-left {
+  gap: 28px;
+  flex: 1;
+}
+
+.gv-navbar-right {
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.gv-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.gv-logo img {
+  display: block;
+  height: 56px !important;
+  width: auto !important;
+  max-height: 56px !important;
+  max-width: 160px !important;
+  object-fit: contain;
+  margin: 0;
+}
+
+.gv-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gv-nav-link {
+  color: #f3f3f3 !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none !important;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  background: transparent !important;
+}
+
+.gv-nav-link:hover {
+  color: #c9a227 !important;
+  background: rgba(201, 162, 39, 0.12) !important;
+}
+
+.gv-nav-flag {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.gv-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #c9a227;
+  color: #0c0c0c !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.gv-nav-cta:hover {
+  background: #dbb43a;
+  color: #0c0c0c !important;
+}
+
+.gv-menu-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.gv-sheet-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 1090 !important;
+  background: rgba(0, 0, 0, 0.72) !important;
+}
+
+.gv-mobile-sheet {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  z-index: 1100 !important;
+  width: min(86vw, 360px) !important;
+  height: 100% !important;
+  background: #0c0c0c !important;
+  color: #fff;
+  padding: 28px 24px !important;
+  overflow: auto;
+  transform: none !important;
+}
+
+.gv-mobile-sheet .gv-nav-list {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gv-nav-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .gv-nav-desktop {
+    display: none !important;
+  }
+
+  .gv-nav-mobile {
+    display: block;
+  }
+
+  .gv-navbar {
+    height: 64px;
+    min-height: 64px;
+  }
+
+  .gv-logo img {
+    height: 48px !important;
+    max-height: 48px !important;
+    max-width: 132px !important;
+  }
+}
+
 /* Hero header block */
 .hero-header,
 .hero-header#top,
@@ -309,14 +511,14 @@ button.aiana-button.contactbutton:hover {
 /* Hero slider */
 .home-slider {
   margin-top: 0;
-  padding: 0 1.5%;
+  padding: 0;
   position: relative;
   z-index: 10;
 }
 
 .hero-slider-inner {
   position: relative;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -329,8 +531,9 @@ button.aiana-button.contactbutton:hover {
   position: relative;
   width: 100%;
   height: 630px;
-  background-size: cover;
-  background-position: center;
+  /* Source slider PNGs have decorative corner scoops baked in — crop them out. */
+  background-size: 118% 124%;
+  background-position: center center;
   display: flex;
   align-items: flex-start;
 }
@@ -463,8 +666,8 @@ button.aiana-button.contactbutton:hover {
   position: relative;
   overflow: hidden;
   background: #ffffff;
-  margin-top: -7px;
-  border-radius: 0 0 20px 20px;
+  margin-top: 0;
+  border-radius: 0;
   padding: 1rem 0 1.25rem;
 }
 
@@ -1340,7 +1543,7 @@ button.aiana-button.contactbutton:hover {
   }
 
   .home-slider {
-    margin-top: -75px;
+    margin-top: 0;
   }
 
   .hero-swiper,
