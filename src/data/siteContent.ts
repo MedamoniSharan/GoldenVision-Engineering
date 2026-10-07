@@ -31,13 +31,6 @@ export const heroSlides: HeroSlide[] = [
   })),
 ];
 
-export const clientLogos: string[] = Array.from({ length: 25 }, (_, i) => {
-  const num = i + 1;
-  if (num === 1) return remoteAsset('wp-content/uploads/2025/07/moldtek.png');
-  if (num <= 6) return remoteAsset(`wp-content/uploads/2025/04/Logo-${num}.png`);
-  return remoteAsset(`wp-content/uploads/2025/04/Logo-${String(num).padStart(2, '0')}.png`);
-});
-
 export const standardLogos: string[] = [
   remoteAsset('wp-content/uploads/2025/03/cisc-logo.png'),
   remoteAsset('wp-content/uploads/2025/03/Group-1395.png'),

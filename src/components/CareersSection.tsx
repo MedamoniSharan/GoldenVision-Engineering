@@ -3,7 +3,7 @@ import { careerOpenings } from '@/data/siteContent';
 
 export default function CareersSection() {
   return (
-    <section className="careers-section" id="careers">
+    <section className="careers-section" id="careers" data-parallax-section="0.08">
       <div className="container careers-layout">
         <div className="careers-copy">
           <h2 className="fonth3 section-heading-lg">

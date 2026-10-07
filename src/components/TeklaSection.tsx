@@ -3,7 +3,7 @@ import { remoteAsset } from '@/utils/assets';
 
 export default function TeklaSection() {
   return (
-    <section className="tekla-section" id="tekla-software">
+    <section className="tekla-section" id="tekla-software" data-parallax-section="0.1">
       <div className="container">
         <div className="tekla-header">
           <span className="tekla-badge">Tekla Software</span>

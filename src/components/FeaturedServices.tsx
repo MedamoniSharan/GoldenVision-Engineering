@@ -6,7 +6,7 @@ export default function FeaturedServices() {
     .filter(Boolean);
 
   return (
-    <section className="featured-services" id="featured-services">
+    <section className="featured-services" id="featured-services" data-parallax-section="0.1">
       <div className="container">
         <div className="featured-services-header">
           <h2 className="fonth3 section-heading-lg">

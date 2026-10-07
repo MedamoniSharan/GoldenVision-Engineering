@@ -44,7 +44,7 @@ export default function SteelWelcomeSection() {
   };
 
   return (
-    <section className="steel-section" id="about">
+    <section className="steel-section" id="about" data-parallax-section="0.06">
       <div className="steel-container">
         <div className="steel-layout">
           <div className="steel-copy">

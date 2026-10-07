@@ -44,6 +44,34 @@ html {
   scroll-behavior: smooth;
 }
 
+.has-parallax .steel-image img,
+.has-parallax .featured-service-top img,
+.has-parallax .tekla-visual img,
+.has-parallax .careers-media img,
+.has-parallax .highlight-image img {
+  will-change: transform;
+  transform: scale(1.14);
+  transform-origin: center center;
+}
+
+.has-parallax .featured-services,
+.has-parallax .tekla-section,
+.has-parallax .careers-section {
+  background-size: 100% 130%;
+  background-repeat: no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .has-parallax .steel-image img,
+  .has-parallax .featured-service-top img,
+  .has-parallax .tekla-visual img,
+  .has-parallax .careers-media img,
+  .has-parallax .highlight-image img {
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
 #top,
 #about,
 #services,
@@ -695,6 +723,60 @@ button.aiana-button.contactbutton:hover {
 .side-contact-tab:hover {
   background: #006699;
   color: #fff !important;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1200;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+  text-decoration: none;
+}
+
+.floating-whatsapp svg {
+  width: 30px;
+  height: 30px;
+}
+
+.floating-whatsapp:hover {
+  background: #1ebe5d;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.floating-whatsapp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.7);
+  animation: whatsapp-pulse 2s ease-out infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp::after {
+    animation: none;
+  }
 }
 
 /* Client logos strip */
@@ -1382,7 +1464,14 @@ button.aiana-button.contactbutton:hover {
 .footer-social-link:hover {
   background: #c9a227;
   border-color: #c9a227;
+  color: #0b1118;
   transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+  width: 18px;
+  height: 18px;
+  color: #0b1118;
 }
 
 .footer-social-icon {

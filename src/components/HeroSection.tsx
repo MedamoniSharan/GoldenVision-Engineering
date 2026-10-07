@@ -1,6 +1,5 @@
 import Header from './Header';
 import HeroSlider from './HeroSlider';
-import ClientLogos from './ClientLogos';
 import SideContactTab from './SideContactTab';
 
 export default function HeroSection() {
@@ -10,7 +9,6 @@ export default function HeroSection() {
       <Header />
       <header id="top" className="hero-header">
         <HeroSlider />
-        <ClientLogos />
       </header>
     </>
   );
