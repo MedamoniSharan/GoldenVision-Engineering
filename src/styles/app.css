@@ -47,6 +47,7 @@ html {
 #top,
 #about,
 #services,
+#testimonials,
 #careers,
 #contact,
 .service-card {
@@ -538,13 +539,26 @@ button.aiana-button.contactbutton:hover {
 
 .hero-swiper {
   width: 100%;
-  height: 630px;
+  height: 680px;
+}
+
+.hero-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+.hero-swiper .swiper-slide-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto;
+  z-index: 2;
 }
 
 .hero-slide {
   position: relative;
   width: 100%;
-  height: 630px;
+  height: 680px;
   /* Source slider PNGs have decorative corner scoops baked in — crop them out. */
   background-size: 118% 124%;
   background-position: center center;
@@ -552,11 +566,19 @@ button.aiana-button.contactbutton:hover {
   align-items: flex-start;
 }
 
+.hero-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 12, 18, 0.62) 0%, rgba(8, 12, 18, 0.28) 52%, transparent 78%);
+  pointer-events: none;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 580px;
-  padding: 220px 0 0 125px;
+  max-width: 620px;
+  padding: 280px 0 80px 125px;
 }
 
 .hero-title {
@@ -1523,11 +1545,11 @@ button.aiana-button.contactbutton:hover {
 
   .hero-swiper,
   .hero-slide {
-    height: 440px;
+    height: 520px;
   }
 
   .hero-content {
-    padding: 120px 1.5rem 0;
+    padding: 160px 1.5rem 72px;
   }
 
   .hero-title {
@@ -1973,5 +1995,111 @@ button.aiana-button.contactbutton:hover {
 
   .careers-media img {
     min-height: 260px;
+  }
+}
+
+.gv-testimonials {
+  background: #f3f4f6 !important;
+  padding: 72px 0 !important;
+  color: #222;
+}
+
+.gv-testimonial-badge {
+  display: inline-flex !important;
+  width: auto !important;
+  max-width: max-content;
+  margin: 0 auto;
+  padding: 6px 14px;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  background: #ececec;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.gv-testimonials h2 {
+  color: #111 !important;
+}
+
+.gv-testimonials > * p,
+.gv-testimonials .container > div > p {
+  color: #5b6166 !important;
+}
+
+.gv-testimonials-marquee {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  max-height: 740px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.gv-testimonials ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.gv-testimonial-card,
+.gv-testimonial-card blockquote,
+.gv-testimonial-card p {
+  background: #ffffff !important;
+}
+
+.gv-testimonial-card {
+  width: 320px !important;
+  max-width: 320px !important;
+  padding: 28px !important;
+  border: 1px solid #e8e8e8;
+  list-style: none;
+}
+
+.gv-testimonial-card p {
+  color: #4b5563 !important;
+}
+
+.gv-testimonial-card cite {
+  color: #111 !important;
+}
+
+.gv-testimonial-person {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  background: transparent !important;
+  padding: 0 !important;
+  margin-top: 20px !important;
+}
+
+.gv-testimonial-person cite,
+.gv-testimonial-person span {
+  display: block !important;
+}
+
+.gv-testimonial-card img {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+.gv-testimonial-col-md,
+.gv-testimonial-col-lg {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .gv-testimonial-col-md {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gv-testimonial-col-lg {
+    display: block;
   }
 }

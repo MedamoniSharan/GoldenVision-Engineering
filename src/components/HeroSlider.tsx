@@ -16,6 +16,7 @@ export default function HeroSlider() {
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
+          fadeEffect={{ crossFade: true }}
           loop
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSwiper={(swiper) => {
