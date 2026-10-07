@@ -29,24 +29,6 @@ export const businessServices: BusinessService[] = [
     ],
   },
   {
-    id: 'connection-designing',
-    title: 'Connection Designing',
-    summary: 'Engineered connections built for strength, safety, and constructability.',
-    description:
-      'Our connection design team develops moment, shear, brace, and base plate solutions — modeled and validated in Tekla for seamless integration with your structural package.',
-    image: remoteAsset('assets/images/Civil-Project.png'),
-    href: '#connection-designing',
-    teklaPowered: true,
-    features: [
-      'Moment & shear connection design',
-      'Brace and gusset connections',
-      'Base plate & anchor rod design',
-      'Delegated connection engineering',
-      'Tekla connection detailing modules',
-      'Design calculation support',
-    ],
-  },
-  {
     id: 'miscellaneous-steel-detailing',
     title: 'Miscellaneous Steel Detailing',
     summary: 'Complete misc metals packages for stairs, rails, platforms, and more.',
@@ -62,6 +44,24 @@ export const businessServices: BusinessService[] = [
       'Grating and floor plate layouts',
       'Misc metals BOM & material lists',
       'Coordinated with main structure',
+    ],
+  },
+  {
+    id: 'connection-designing',
+    title: 'Connection Designing',
+    summary: 'Engineered connections built for strength, safety, and constructability.',
+    description:
+      'Our connection design team develops moment, shear, brace, and base plate solutions — modeled and validated in Tekla for seamless integration with your structural package.',
+    image: remoteAsset('assets/images/Civil-Project.png'),
+    href: '#connection-designing',
+    teklaPowered: true,
+    features: [
+      'Moment & shear connection design',
+      'Brace and gusset connections',
+      'Base plate & anchor rod design',
+      'Delegated connection engineering',
+      'Tekla connection detailing modules',
+      'Design calculation support',
     ],
   },
   {
@@ -119,11 +119,3 @@ export const businessServices: BusinessService[] = [
     ],
   },
 ];
-
-/** Core service pillars highlighted on the homepage */
-export const featuredServiceIds = [
-  'structural-steel-detailing',
-  'connection-designing',
-  'miscellaneous-steel-detailing',
-  'pemb-designing-drafting',
-] as const;

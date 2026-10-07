@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { useEffect, useRef, useState, type MouseEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCounter } from '@/hooks/useCounter';
 
 const copy = {
@@ -36,11 +36,9 @@ export default function SteelWelcomeSection() {
     return () => observer.disconnect();
   }, []);
 
-  const handleReadMore = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
+  const handleReadMore = () => {
     setIsPressed(true);
     window.setTimeout(() => setIsPressed(false), 180);
-    document.querySelector('#featured-services')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -61,7 +59,7 @@ export default function SteelWelcomeSection() {
 
             <a
               className={`steel-button${isPressed ? ' is-pressed' : ''}`}
-              href="#featured-services"
+              href="#services"
               onClick={handleReadMore}
               aria-label="Read more about Golden Vision Engineering"
             >
