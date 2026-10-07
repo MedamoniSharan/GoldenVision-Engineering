@@ -1194,14 +1194,47 @@ button.aiana-button.contactbutton:hover {
 
 .featured-service-top {
   position: relative;
-  height: 200px;
+  height: 240px;
   overflow: hidden;
+  background: #0b1118;
+  border-bottom: 3px solid #c9a227;
 }
 
 .featured-service-top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(1.35) contrast(1.15) brightness(1.06);
+  transition: filter 0.4s ease;
+}
+
+/* Soft vignette keeps the number badge and Tekla chip legible on bright photos. */
+.featured-service-top::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 32%),
+    linear-gradient(0deg, rgba(201, 162, 39, 0.18) 0%, rgba(201, 162, 39, 0) 30%);
+  transition: opacity 0.4s ease;
+}
+
+.featured-service-top .tekla-chip {
+  z-index: 2;
+}
+
+.featured-service-card:hover .featured-service-top img {
+  filter: saturate(1.5) contrast(1.2) brightness(1.12);
+}
+
+.featured-service-card:hover .featured-service-top::after {
+  opacity: 0.6;
+}
+
+.featured-service-card:hover {
+  box-shadow: 0 16px 40px rgba(201, 162, 39, 0.28);
 }
 
 .featured-service-number {
