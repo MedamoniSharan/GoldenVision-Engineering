@@ -1,36 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const imageSources = [
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-486.png',
-    alt: 'Group 486',
-  },
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-484.png',
-    alt: 'Group 484',
-  },
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-483.png',
-    alt: 'Group 483',
-  },
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-482.png',
-    alt: 'Group 482',
-  },
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-489.png',
-    alt: 'Group 489',
-  },
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-488.png',
-    alt: 'Group 488',
-  },
-  {
-    src: 'https://cdn-ilckhdb.nitrocdn.com/VYLsYqTfeLHHKfUBhyKIUpYJIwMJDxMb/assets/images/optimized/rev-620a55b/www.moldtekengineering.com/wp-content/uploads/2025/03/Group-487.png',
-    alt: 'Group 487',
-  },
-];
+import { portfolioProjects } from '@/data/siteContent';
 
 export default function ImageCarouselGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,20 +8,20 @@ export default function ImageCarouselGallery() {
   const viewportRef = useRef<HTMLDivElement>(null);
 
   const visibleSlides = useMemo(
-    () => [...imageSources, ...imageSources, ...imageSources],
+    () => [...portfolioProjects, ...portfolioProjects, ...portfolioProjects],
     [],
   );
 
   const goTo = (direction: number) => {
     setActiveIndex(
-      (current) => (current + direction + imageSources.length) % imageSources.length,
+      (current) => (current + direction + portfolioProjects.length) % portfolioProjects.length,
     );
   };
 
   useEffect(() => {
     if (isPaused) return undefined;
 
-    const timer = window.setInterval(() => goTo(1), 1500);
+    const timer = window.setInterval(() => goTo(1), 2800);
     return () => window.clearInterval(timer);
   }, [isPaused]);
 
@@ -67,7 +37,7 @@ export default function ImageCarouselGallery() {
       const slideWidth = slide.getBoundingClientRect().width + gap;
       node.style.setProperty(
         '--carousel-offset',
-        `${-(activeIndex + imageSources.length) * slideWidth}px`,
+        `${-(activeIndex + portfolioProjects.length) * slideWidth}px`,
       );
     };
 
@@ -77,7 +47,16 @@ export default function ImageCarouselGallery() {
   }, [activeIndex]);
 
   return (
-    <section className="image-carousel" id="gallery" aria-label="Image gallery carousel">
+    <section className="image-carousel" id="portfolio" aria-label="Project portfolio">
+      <div className="container">
+        <h2 className="fonth3 section-heading-lg portfolio-heading">
+          Our <span className="accent">Portfolio</span>
+        </h2>
+        <p className="services-intro portfolio-intro">
+          A look at the steel, connection, BIM, and industrial packages Golden Vision Engineering
+          delivers with Tekla-powered detailing.
+        </p>
+      </div>
       <div
         ref={viewportRef}
         className="image-carousel__viewport"
@@ -91,44 +70,48 @@ export default function ImageCarouselGallery() {
           role="list"
           aria-live={isPaused ? 'polite' : 'off'}
         >
-          {visibleSlides.map((image, index) => (
+          {visibleSlides.map((project, index) => (
             <figure
               className="image-carousel__slide"
               data-carousel-slide
-              key={`${image.alt}-${index}`}
+              key={`${project.title}-${index}`}
               role="listitem"
             >
               <img
                 className="image-carousel__image"
-                src={image.src}
-                alt={image.alt}
+                src={project.image}
+                alt={project.title}
                 width={1020}
                 height={736}
                 loading="lazy"
               />
+              <figcaption className="image-carousel__caption">
+                <strong>{project.title}</strong>
+                <span>{project.summary}</span>
+              </figcaption>
             </figure>
           ))}
         </div>
       </div>
 
-      <nav className="image-carousel__controls" aria-label="Carousel controls">
+      <nav className="image-carousel__controls" aria-label="Portfolio carousel controls">
         <button
           className="image-carousel__button"
           type="button"
           onClick={() => goTo(-1)}
-          aria-label="Previous slide"
+          aria-label="Previous project"
         >
           <ChevronLeft size={17} strokeWidth={1.7} aria-hidden="true" />
         </button>
         <span
           className="image-carousel__status"
-          aria-label={`Slide ${activeIndex + 1} of ${imageSources.length}`}
+          aria-label={`Project ${activeIndex + 1} of ${portfolioProjects.length}`}
         />
         <button
           className="image-carousel__button"
           type="button"
           onClick={() => goTo(1)}
-          aria-label="Next slide"
+          aria-label="Next project"
         >
           <ChevronRight size={17} strokeWidth={1.7} aria-hidden="true" />
         </button>

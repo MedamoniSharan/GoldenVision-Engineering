@@ -17,9 +17,6 @@ const Navbar = () => {
           <a href="#contact" className="gv-nav-flag" aria-label="India">
             <img src="/assets/images/flag-india.svg" alt="" className="nav-flag" />
           </a>
-          <a href="#contact" className="gv-nav-cta">
-            Contact Us
-          </a>
           <div className="gv-nav-mobile">
             <NavigationSheet />
           </div>

@@ -1,4 +1,4 @@
-import type { CaseStudy, HeroSlide, StatItem } from '@/types';
+import type { HeroSlide, StatItem } from '@/types';
 import { businessServices } from '@/data/businessServices';
 import { SITE_TAGLINE } from '@/data/siteConfig';
 import { remoteAsset } from '@/utils/assets';
@@ -72,31 +72,67 @@ export const companyStats: StatItem[] = [
   },
 ];
 
-export const caseStudies: CaseStudy[] = [
+export const portfolioProjects = [
   {
-    title: 'Gillette Stadium North Endzone Renovation',
-    image: remoteAsset('wp-content/uploads/2025/03/GIllete-Stadium-2018-customer-choice-award.png'),
-    href: '/case-studies-civil/',
+    title: 'Structural Steel Detailing',
+    summary: 'Fabrication-ready Tekla models, shop drawings, and erection plans.',
+    image: '/assets/images/Steel-Detailing.png',
   },
   {
-    title: 'Taylorsville Utah Temple',
-    image: remoteAsset('wp-content/uploads/2025/03/Customer-Choice-Award-2021-Utah-Temple.png'),
-    href: '/case-studies-civil/',
+    title: 'Healthcare & Civic Structures',
+    summary: 'Coordinated steel packages for hospitals, campuses, and public buildings.',
+    image: '/assets/images/Civil-Project.png',
   },
   {
-    title: 'Parkview Health Core Tower Expansion',
-    image: remoteAsset('wp-content/uploads/2025/03/Parkview-Health-care-Building-2019-Award.png'),
-    href: '/case-studies-civil/',
+    title: 'Industrial & Mechanical Plants',
+    summary: 'Heavy industrial framing, platforms, and equipment support steel.',
+    image: '/assets/images/Mechanical-Project.png',
   },
   {
-    title: 'Morrow School Project',
-    image: remoteAsset('wp-content/uploads/2025/03/sds2-solid-steel-commercial-large-Tonnage-award.png'),
-    href: '/case-studies-civil/',
+    title: 'Precast & Hybrid Frames',
+    summary: 'Detailing that aligns steel connections with precast and hybrid systems.',
+    image: '/assets/images/Precast-Detailing.png',
   },
   {
-    title: 'BOSK Battery Plant – Tennessee',
-    image: remoteAsset('wp-content/uploads/2025/03/Group-1455.png'),
-    href: '/case-studies-civil/',
+    title: 'Telecom & Data Centers',
+    summary: 'Mission-critical steel for towers, racks, and data hall infrastructure.',
+    image: '/assets/images/Telecom-Case.png',
+  },
+  {
+    title: 'Utilities & Energy',
+    summary: 'Pipe racks, supports, and utility structures engineered for the field.',
+    image: '/assets/images/Utilities-case.png',
+  },
+  {
+    title: 'Construction Documents',
+    summary: 'Design development packages that move cleanly into fabrication.',
+    image: '/assets/images/Construction-Documents-Design-Development.png',
+  },
+  {
+    title: 'Complex Structural Engineering',
+    summary: 'High-tonnage commercial and specialty steel documented in Tekla.',
+    image: '/assets/images/Structural-Engineering-6.png',
+  },
+];
+
+export const careerOpenings = [
+  {
+    title: 'Tekla Steel Detailer',
+    location: 'Novi, MI / Remote',
+    summary:
+      'Produce shop, assembly, and erection drawings in Tekla Structures for structural and miscellaneous steel packages.',
+  },
+  {
+    title: 'Connection Design Engineer',
+    location: 'Novi, MI',
+    summary:
+      'Design moment, shear, brace, and base-plate connections and coordinate them inside the Tekla model.',
+  },
+  {
+    title: 'BIM / Tekla Coordinator',
+    location: 'Remote',
+    summary:
+      'Own model coordination, IFC exchange, clash reviews, and fabrication-ready BIM deliverables.',
   },
 ];
 

@@ -27,12 +27,6 @@ export interface ServiceHighlight {
   href: string;
 }
 
-export interface CaseStudy {
-  title: string;
-  image: string;
-  href: string;
-}
-
 export interface BlogPost {
   title: string;
   href: string;

@@ -40,6 +40,20 @@
   min-height: 100vh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#top,
+#about,
+#services,
+#portfolio,
+#careers,
+#contact,
+.service-card {
+  scroll-margin-top: 88px;
+}
+
 /* Theme CSS targets every <nav> (top/left/transform) and Bootstrap sets img { height: auto }.
    Those unlayered rules beat Tailwind utilities, so the header must be styled here. */
 .gv-navbar {
@@ -132,11 +146,12 @@
 
 .gv-nav-link {
   color: #f3f3f3 !important;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-decoration: none !important;
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: 6px;
   white-space: nowrap;
   background: transparent !important;
@@ -1175,45 +1190,6 @@ button.aiana-button.contactbutton:hover {
   font-weight: 500;
 }
 
-/* Case Studies */
-.case-study-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.case-study-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 21px;
-  font-weight: 500;
-}
-
-.case-study-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.case-study-image {
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 0.75rem;
-}
-
-.case-study-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.wpcp-image-caption {
-  font-size: 15px;
-  color: #fff;
-  text-align: center;
-  line-height: 1.4;
-}
-
 /* News & Blog */
 .news-grid {
   display: grid;
@@ -1922,9 +1898,19 @@ button.aiana-button.contactbutton:hover {
 .image-carousel {
   width: 100%;
   overflow: hidden;
-  padding: 0 0 54px;
+  padding: 48px 0 54px;
   color: #0c0c0c;
   background: #ffffff;
+}
+
+.portfolio-heading,
+.portfolio-intro {
+  text-align: center;
+}
+
+.portfolio-intro {
+  max-width: 720px;
+  margin: 0 auto 28px;
 }
 
 .image-carousel__viewport {
@@ -1942,11 +1928,36 @@ button.aiana-button.contactbutton:hover {
 }
 
 .image-carousel__slide {
+  position: relative;
   flex: 0 0 calc((100vw - 40px) / 3);
   max-width: 425px;
   overflow: hidden;
   border-radius: 20px;
   margin: 0;
+}
+
+.image-carousel__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 18px 14px;
+  background: linear-gradient(transparent, rgba(8, 8, 8, 0.82));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.image-carousel__caption strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.image-carousel__caption span {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
 .image-carousel__image {
@@ -2025,9 +2036,90 @@ button.aiana-button.contactbutton:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .image-carousel__track,
   .image-carousel__image,
   .image-carousel__button {
     transition: none;
+  }
+}
+
+.careers-section {
+  background: #0b1118;
+  color: #f4f4f4;
+  padding: 72px 0;
+}
+
+.careers-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.careers-copy p {
+  color: #d7dbe0;
+  line-height: 1.6;
+}
+
+.careers-list {
+  list-style: none;
+  margin: 28px 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.careers-list h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.careers-location {
+  margin: 0 0 6px !important;
+  color: #c9a227 !important;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.careers-apply {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #c9a227;
+  color: #0c0c0c !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.careers-media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.careers-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .careers-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-media img {
+    min-height: 260px;
   }
 }

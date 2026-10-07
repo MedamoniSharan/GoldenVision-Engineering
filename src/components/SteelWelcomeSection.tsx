@@ -44,7 +44,7 @@ export default function SteelWelcomeSection() {
   };
 
   return (
-    <section className="steel-section" id="welcome">
+    <section className="steel-section" id="about">
       <div className="steel-container">
         <div className="steel-layout">
           <div className="steel-copy">

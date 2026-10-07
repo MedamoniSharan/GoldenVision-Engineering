@@ -14,7 +14,11 @@ export const NavMenu = (props: ComponentProps<typeof NavigationMenu>) => (
       {mainNavigation.map((item) => (
         <NavigationMenuItem key={item.label}>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <a href={item.href} className="gv-nav-link">
+            <a
+              href={item.href}
+              className="gv-nav-link"
+              onClick={() => document.querySelector<HTMLButtonElement>('.gv-sheet-close')?.click()}
+            >
               {item.label}
             </a>
           </NavigationMenuLink>
