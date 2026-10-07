@@ -47,7 +47,6 @@ html {
 #top,
 #about,
 #services,
-#portfolio,
 #careers,
 #contact,
 .service-card {
@@ -1892,83 +1891,6 @@ button.aiana-button.contactbutton:hover {
     width: 140px;
     min-height: 92px;
   }
-}
-
-/* Portfolio wheel — unlayered so Bootstrap img rules cannot blow up the cards */
-.image-carousel {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100vh;
-  min-height: 560px;
-  padding: 0;
-  color: #f4f4f4;
-  background: #0b1118;
-  overflow: hidden;
-}
-
-.image-carousel > section,
-.image-carousel [role="listbox"] {
-  height: 100% !important;
-  min-height: 100% !important;
-  width: 100% !important;
-  background: #0b1118 !important;
-  color: #f4f4f4 !important;
-}
-
-.image-carousel [role="listbox"] {
-  position: absolute !important;
-  inset: 0 !important;
-}
-
-.image-carousel [role="option"] {
-  display: block !important;
-  overflow: hidden !important;
-}
-
-.image-carousel [role="option"] > span {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden !important;
-}
-
-.image-carousel img {
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  object-fit: cover !important;
-  margin: 0;
-}
-
-.image-carousel .pointer-events-none {
-  color: #f4f4f4;
-  z-index: 2;
-  font-weight: 600;
-}
-
-.image-carousel ol {
-  z-index: 3;
-  color: rgba(244, 244, 244, 0.55);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.image-carousel ol button {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  padding: 0;
-}
-
-.image-carousel ol .font-medium {
-  color: #ffffff !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

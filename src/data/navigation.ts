@@ -5,7 +5,6 @@ export const mainNavigation: NavLink[] = [
   { label: 'Home', href: '#top' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Careers', href: '#careers' },
   { label: 'Contact Us', href: '#contact' },
 ];
@@ -17,7 +16,6 @@ export const footerLinkGroups = [
       { label: 'Home', href: '#top' },
       { label: 'About', href: '#about' },
       { label: 'Services', href: '#services' },
-      { label: 'Portfolio', href: '#portfolio' },
       { label: 'Careers', href: '#careers' },
       { label: 'Contact', href: '#contact' },
     ],

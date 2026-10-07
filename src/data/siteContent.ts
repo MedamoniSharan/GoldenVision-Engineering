@@ -72,49 +72,6 @@ export const companyStats: StatItem[] = [
   },
 ];
 
-export const portfolioProjects = [
-  {
-    title: 'Structural Steel Detailing',
-    summary: 'Fabrication-ready Tekla models, shop drawings, and erection plans.',
-    image: '/assets/images/Steel-Detailing.png',
-  },
-  {
-    title: 'Healthcare & Civic Structures',
-    summary: 'Coordinated steel packages for hospitals, campuses, and public buildings.',
-    image: '/assets/images/Civil-Project.png',
-  },
-  {
-    title: 'Industrial & Mechanical Plants',
-    summary: 'Heavy industrial framing, platforms, and equipment support steel.',
-    image: '/assets/images/Mechanical-Project.png',
-  },
-  {
-    title: 'Precast & Hybrid Frames',
-    summary: 'Detailing that aligns steel connections with precast and hybrid systems.',
-    image: '/assets/images/Precast-Detailing.png',
-  },
-  {
-    title: 'Telecom & Data Centers',
-    summary: 'Mission-critical steel for towers, racks, and data hall infrastructure.',
-    image: '/assets/images/Telecom-Case.png',
-  },
-  {
-    title: 'Utilities & Energy',
-    summary: 'Pipe racks, supports, and utility structures engineered for the field.',
-    image: '/assets/images/Utilities-case.png',
-  },
-  {
-    title: 'Construction Documents',
-    summary: 'Design development packages that move cleanly into fabrication.',
-    image: '/assets/images/Construction-Documents-Design-Development.png',
-  },
-  {
-    title: 'Complex Structural Engineering',
-    summary: 'High-tonnage commercial and specialty steel documented in Tekla.',
-    image: '/assets/images/Structural-Engineering-6.png',
-  },
-];
-
 export const careerOpenings = [
   {
     title: 'Tekla Steel Detailer',
