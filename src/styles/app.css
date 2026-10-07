@@ -1,9 +1,9 @@
-@import '/assets/dist/framework/bootstrap/css/bootstrap.min.css';
-@import '/assets/dist/theme/css/color.css';
-@import '/assets/dist/theme/css/theme.css';
-@import '/assets/dist/theme/css/animation.css';
-@import '/assets/dist/theme/css/responsive.css';
-@import '/assets/dist/theme/css/map.css';
+@import '../../public/assets/dist/framework/bootstrap/css/bootstrap.min.css';
+@import '../../public/assets/dist/theme/css/color.css';
+@import '../../public/assets/dist/theme/css/theme.css';
+@import '../../public/assets/dist/theme/css/animation.css';
+@import '../../public/assets/dist/theme/css/responsive.css';
+@import '../../public/assets/dist/theme/css/map.css';
 
 @tailwind base;
 @tailwind components;
