@@ -78,67 +78,75 @@ const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
+function QuoteIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M9.6 6C6.5 7.4 4.5 10 4.5 13.6V18h6v-6H7.6c.2-1.9 1.3-3.3 3.2-4.2L9.6 6Zm9 0c-3.1 1.4-5.1 4-5.1 7.6V18h6v-6h-2.9c.2-1.9 1.3-3.3 3.2-4.2L18.6 6Z"
+      />
+    </svg>
+  );
+}
+
+function Stars() {
+  return (
+    <div className="gv-testimonial-stars" aria-label="5 out of 5 stars">
+      {Array.from({ length: 5 }, (_, i) => (
+        <svg key={i} viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5Z"
+          />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 const TestimonialsColumn = (props: {
   className?: string;
   testimonials: Testimonial[];
   duration?: number;
 }) => {
   return (
-    <div className={props.className}>
+    <div className={`gv-testimonial-col ${props.className ?? ''}`.trim()}>
       <motion.ul
-        animate={{
-          translateY: '-50%',
-        }}
+        animate={{ translateY: '-50%' }}
         transition={{
           duration: props.duration || 10,
           repeat: Infinity,
           ease: 'linear',
           repeatType: 'loop',
         }}
-        className="m-0 flex list-none flex-col gap-6 bg-transparent p-0 pb-6"
+        className="gv-testimonial-list"
       >
-        {[
-          ...new Array(2).fill(0).map((_, index) => (
-            <React.Fragment key={index}>
-              {props.testimonials.map(({ text, image, name, role }, i) => (
-                <motion.li
-                  key={`${index}-${i}`}
-                  aria-hidden={index === 1}
-                  tabIndex={index === 1 ? -1 : 0}
-                  whileHover={{
-                    scale: 1.03,
-                    y: -8,
-                    boxShadow:
-                      '0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                    transition: { type: 'spring', stiffness: 400, damping: 17 },
-                  }}
-                  className="gv-testimonial-card group w-full max-w-xs cursor-default select-none rounded-3xl border border-neutral-200 bg-white p-10 shadow-lg shadow-black/5"
-                >
-                  <blockquote className="m-0 p-0">
-                    <p className="m-0 leading-relaxed text-neutral-600">{text}</p>
-                    <div className="gv-testimonial-person mt-6 flex items-center gap-3">
-                      <img
-                        width={40}
-                        height={40}
-                        src={image}
-                        alt={`Portrait of ${name}`}
-                        className="h-10 w-10 rounded-full object-cover"
-                      />
-                      <div className="flex flex-col">
-                        <cite className="not-italic font-semibold leading-5 tracking-tight text-neutral-900">
-                          {name}
-                        </cite>
-                        <span className="mt-0.5 text-sm leading-5 tracking-tight text-neutral-500">
-                          {role}
-                        </span>
-                      </div>
-                    </div>
-                  </blockquote>
-                </motion.li>
-              ))}
-            </React.Fragment>
-          )),
-        ]}
+        {new Array(2).fill(0).map((_, index) => (
+          <React.Fragment key={index}>
+            {props.testimonials.map(({ text, image, name, role }, i) => (
+              <li
+                key={`${index}-${i}`}
+                aria-hidden={index === 1}
+                className="gv-testimonial-card"
+              >
+                <div className="gv-testimonial-top">
+                  <span className="gv-testimonial-quote">
+                    <QuoteIcon />
+                  </span>
+                  <Stars />
+                </div>
+                <p className="gv-testimonial-text">{text}</p>
+                <div className="gv-testimonial-person">
+                  <img width={44} height={44} src={image} alt={`Portrait of ${name}`} />
+                  <div>
+                    <strong className="gv-testimonial-name">{name}</strong>
+                    <span className="gv-testimonial-role">{role}</span>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </React.Fragment>
+        ))}
       </motion.ul>
     </div>
   );
@@ -146,54 +154,34 @@ const TestimonialsColumn = (props: {
 
 export default function TestimonialsSection() {
   return (
-    <section
-      id="testimonials"
-      aria-labelledby="testimonials-heading"
-      className="gv-testimonials relative overflow-hidden bg-transparent py-24"
-    >
+    <section id="testimonials" aria-labelledby="testimonials-heading" className="gv-testimonials">
       <motion.div
-        initial={{ opacity: 0, y: 50, rotate: -2 }}
-        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
-        transition={{
-          duration: 1.2,
-          ease: [0.16, 1, 0.3, 1],
-          opacity: { duration: 0.8 },
-        }}
-        className="container z-10 mx-auto px-4"
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className="container"
       >
-        <div className="mx-auto mb-16 flex max-w-[540px] flex-col items-center justify-center">
-          <div className="flex justify-center">
-            <div className="gv-testimonial-badge">Testimonials</div>
-          </div>
-
-          <h2
-            id="testimonials-heading"
-            className="mt-6 text-center text-4xl font-extrabold tracking-tight text-neutral-900 md:text-5xl"
-          >
-            What our clients say
-          </h2>
-          <p className="mt-5 max-w-sm text-center text-lg leading-relaxed text-neutral-500">
+        <div className="gv-testimonials-head">
+          <span className="gv-testimonial-badge">Testimonials</span>
+          <h2 id="testimonials-heading">What our clients say</h2>
+          <p>
             Fabricators, contractors, and owners on Tekla detailing, connections, and BIM from
             Golden Vision Engineering.
           </p>
         </div>
 
-        <div
-          className="gv-testimonials-marquee mt-10"
-          role="region"
-          aria-label="Scrolling testimonials"
-        >
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+        <div className="gv-testimonials-marquee" role="region" aria-label="Scrolling testimonials">
+          <TestimonialsColumn testimonials={firstColumn} duration={30} />
           <TestimonialsColumn
             testimonials={secondColumn}
             className="gv-testimonial-col-md"
-            duration={19}
+            duration={36}
           />
           <TestimonialsColumn
             testimonials={thirdColumn}
             className="gv-testimonial-col-lg"
-            duration={17}
+            duration={33}
           />
         </div>
       </motion.div>
