@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const MEDIA =
-  '.steel-image img, .featured-service-top img, .tekla-visual img, .careers-media img, .highlight-image img';
+  '.steel-image img, .highlight-image img';
 
 export function useSiteParallax() {
   useEffect(() => {
@@ -14,11 +14,6 @@ export function useSiteParallax() {
 
     const tick = () => {
       const vh = window.innerHeight;
-      const scrollY = window.scrollY;
-
-      document.querySelectorAll<HTMLElement>('.hero-slide').forEach((slide) => {
-        slide.style.backgroundPosition = `center calc(42% + ${scrollY * 0.22}px)`;
-      });
 
       document.querySelectorAll<HTMLElement>(MEDIA).forEach((el) => {
         const host = el.parentElement ?? el;

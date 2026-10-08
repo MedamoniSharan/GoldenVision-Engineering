@@ -1,19 +1,16 @@
-import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useCounter } from '@/hooks/useCounter';
 
 const copy = {
-  eyebrow: 'Where Can We Help You',
-  titleLine1: 'Welcome To Golden',
-  titleLine2: 'Vision Engineering',
+  title: 'Know Us',
   body: [
-    'Golden Vision Engineering is your one-stop destination as well as a service provider that serves its clients globally by providing structural steel detailing, connection design, miscellaneous steel, PEMB design & drafting, BIM integration, estimation, and a lot more.',
-    'The company is having diverse knowledge and good hands over the use of a different set of tools and techniques that is required for executing the design and drafting services for any project. Our effective portfolio in providing services in different areas is only possible with the help of our in-house team of engineers who are at their best to deliver 2D Drawings and 3D models of the project that provide to the fabrication as well as the erection method of overall steel structures.',
+    'Golden Vision Engineering is a structural engineering and detailing service provider focused on delivering reliable, precise, and efficient solutions for North American steel construction projects.',
+    'Our expertise spans Structural Steel Detailing, Connection Design, Miscellaneous Steel, PEMB Design & Drafting, BIM Integration, Estimation, and more. We leverage advanced tools, industry best practices, and proven techniques to support projects from design through fabrication and erection in alignment with applicable AISC, NISD, OSHA, and IBC requirements, with a strong emphasis on accuracy, safety, constructability, and quality.',
+    'At Golden Vision Engineering, our goal is simple: to provide dependable engineering and detailing solutions that help our clients execute North American steel projects with confidence.',
   ],
 } as const;
 
 export default function SteelWelcomeSection() {
-  const [isPressed, setIsPressed] = useState(false);
   const [countVisible, setCountVisible] = useState(false);
   const badgeRef = useRef<HTMLDivElement>(null);
   const years = useCounter(17, 1600, countVisible);
@@ -36,36 +33,20 @@ export default function SteelWelcomeSection() {
     return () => observer.disconnect();
   }, []);
 
-  const handleReadMore = () => {
-    setIsPressed(true);
-    window.setTimeout(() => setIsPressed(false), 180);
-  };
-
   return (
     <section className="steel-section" id="about" data-parallax-section="0.06">
       <div className="steel-container">
         <div className="steel-layout">
           <div className="steel-copy">
-            <p className="steel-eyebrow">{copy.eyebrow}</p>
             <h2 id="steel-title" className="steel-title">
-              <span>{copy.titleLine1}</span>
-              <span>{copy.titleLine2}</span>
+              <span>{copy.title}</span>
             </h2>
 
             <div className="steel-description">
-              <p>{copy.body[0]}</p>
-              <p>{copy.body[1]}</p>
+              {copy.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+              ))}
             </div>
-
-            <a
-              className={`steel-button${isPressed ? ' is-pressed' : ''}`}
-              href="#services"
-              onClick={handleReadMore}
-              aria-label="Read more about Golden Vision Engineering"
-            >
-              <span>Read More</span>
-              <ArrowRight aria-hidden="true" size={18} strokeWidth={2.2} />
-            </a>
           </div>
 
           <div className="steel-media">

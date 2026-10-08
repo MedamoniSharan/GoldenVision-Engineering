@@ -6,7 +6,6 @@ export interface BusinessService extends ServiceHighlight {
   description: string;
   summary: string;
   features: string[];
-  teklaPowered: boolean;
 }
 
 export const businessServices: BusinessService[] = [
@@ -18,7 +17,6 @@ export const businessServices: BusinessService[] = [
       'We deliver accurate shop drawings, erection plans, and fabrication details using Tekla Structures — ensuring every member, bolt, and weld is documented for flawless field execution.',
     image: remoteAsset('assets/images/Steel-Detailing.png'),
     href: '#structural-steel-detailing',
-    teklaPowered: true,
     features: [
       '3D modeling in Tekla Structures',
       'Shop & erection drawings',
@@ -36,7 +34,6 @@ export const businessServices: BusinessService[] = [
       'From stairs and handrails to ladders, platforms, and embed plates — we detail every miscellaneous steel component with Tekla precision for coordinated delivery.',
     image: remoteAsset('assets/images/Misc.png'),
     href: '#miscellaneous-steel-detailing',
-    teklaPowered: true,
     features: [
       'Stair, railing & ladder detailing',
       'Platforms, mezzanines & catwalks',
@@ -54,7 +51,6 @@ export const businessServices: BusinessService[] = [
       'Our connection design team develops moment, shear, brace, and base plate solutions — modeled and validated in Tekla for seamless integration with your structural package.',
     image: remoteAsset('assets/images/Civil-Project.png'),
     href: '#connection-designing',
-    teklaPowered: true,
     features: [
       'Moment & shear connection design',
       'Brace and gusset connections',
@@ -72,7 +68,6 @@ export const businessServices: BusinessService[] = [
       'We provide PEMB layout, framing, purlin/girt detailing, and foundation reaction documentation — leveraging Tekla for accurate, buildable pre-engineered building packages.',
     image: remoteAsset('assets/images/Pre-Engineered-6.png'),
     href: '#pemb-designing-drafting',
-    teklaPowered: true,
     features: [
       'PEMB layout & framing plans',
       'Purlin, girt & eave strut detailing',
@@ -90,7 +85,6 @@ export const businessServices: BusinessService[] = [
       'Our BIM workflows bridge architects, engineers, and fabricators through Tekla-driven 3D models — reducing clashes, rework, and surprises on site.',
     image: remoteAsset('assets/images/Construction-Documents-Design-Development.png'),
     href: '#bim-integration',
-    teklaPowered: true,
     features: [
       'Tekla Structures BIM modeling',
       'IFC / IFD model exchange',
@@ -108,7 +102,6 @@ export const businessServices: BusinessService[] = [
       'We extract accurate quantities directly from Tekla models — delivering reliable weight summaries, material lists, and bid support for structural steel projects.',
     image: remoteAsset('assets/images/Estimation.png'),
     href: '#estimation',
-    teklaPowered: true,
     features: [
       'Model-based quantity takeoffs',
       'Weight summaries & tonnage reports',
@@ -116,6 +109,23 @@ export const businessServices: BusinessService[] = [
       'Bid support packages',
       'Change-order quantity tracking',
       'Cost estimation assistance',
+    ],
+  },
+  {
+    id: 'joist-deck-detailing',
+    title: 'Joist and Deck Detailing',
+    summary: 'Coordinated joist and deck layouts for complete roof and floor framing packages.',
+    description:
+      'We prepare joist placement plans, joist girder layouts, and roof and floor deck drawings coordinated with the structural steel model — giving joist and deck suppliers clear, accurate information for fabrication and installation.',
+    image: remoteAsset('assets/images/Steel-Detailing.png'),
+    href: '#joist-deck-detailing',
+    features: [
+      'Joist placement & erection plans',
+      'Joist girder layouts & seat details',
+      'Roof & floor deck layouts',
+      'Bridging & bracing details',
+      'Deck openings, edges & reinforcement',
+      'SJI & SDI standards compliance',
     ],
   },
 ];

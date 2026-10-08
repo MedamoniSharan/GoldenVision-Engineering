@@ -1,35 +1,5 @@
-import type { HeroSlide, StatItem } from '@/types';
-import { businessServices } from '@/data/businessServices';
-import { SITE_TAGLINE } from '@/data/siteConfig';
+import type { StatItem } from '@/types';
 import { remoteAsset } from '@/utils/assets';
-
-const heroImages = [
-  remoteAsset('wp-content/uploads/2025/03/Slider-1.png'),
-  remoteAsset('wp-content/uploads/2026/09/Slider-BIM-2.png'),
-  remoteAsset('wp-content/uploads/2025/03/Slider-03.png'),
-  remoteAsset('wp-content/uploads/2025/07/Slider-05.png'),
-  remoteAsset('wp-content/uploads/2025/08/Plant-Engineering-Slider.png'),
-  remoteAsset('wp-content/uploads/2025/03/Slider-02.png'),
-];
-
-export const heroSlides: HeroSlide[] = [
-  {
-    id: 'brand',
-    title: 'Golden Vision Engineering',
-    subtitle: SITE_TAGLINE,
-    image: remoteAsset('wp-content/uploads/2025/07/Slider-05.png'),
-    ctaLabel: 'Our Services',
-    ctaHref: '#services',
-  },
-  ...businessServices.map((service, index) => ({
-    id: service.id,
-    title: service.title,
-    subtitle: service.description,
-    image: heroImages[index % heroImages.length],
-    ctaLabel: 'Learn More',
-    ctaHref: service.href,
-  })),
-];
 
 export const standardLogos: string[] = [
   remoteAsset('wp-content/uploads/2025/03/cisc-logo.png'),
@@ -66,24 +36,10 @@ export const companyStats: StatItem[] = [
 ];
 
 export const careerOpenings = [
-  {
-    title: 'Tekla Steel Detailer',
-    location: 'Novi, MI / Remote',
-    summary:
-      'Produce shop, assembly, and erection drawings in Tekla Structures for structural and miscellaneous steel packages.',
-  },
-  {
-    title: 'Connection Design Engineer',
-    location: 'Novi, MI',
-    summary:
-      'Design moment, shear, brace, and base-plate connections and coordinate them inside the Tekla model.',
-  },
-  {
-    title: 'BIM / Tekla Coordinator',
-    location: 'Remote',
-    summary:
-      'Own model coordination, IFC exchange, clash reviews, and fabrication-ready BIM deliverables.',
-  },
+  'Steel Detailer (Tekla & SDS2)',
+  'Steel Detailing Checker (Tekla & SDS2)',
+  'PEMB Drafter',
+  'Connection Designer',
 ];
 
 export const newsItems = [

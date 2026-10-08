@@ -7,9 +7,6 @@ export const SITE_DESCRIPTION =
 
 export const CONTACT_PHONE = '+1 (945) 327 2223';
 export const CONTACT_PHONE_HREF = 'tel:+19453272223';
-export const WHATSAPP_HREF =
-  'https://wa.me/19453272223?text=' +
-  encodeURIComponent('Hi Golden Vision Engineering, I would like to discuss a project.');
 export const CONTACT_EMAIL = 'sales@goldenvisioneng.com';
 export const CONTACT_ADDRESS = '45625 Grand River Ave, Novi, MI 48374';
 export const CONTACT_MAP_URL =

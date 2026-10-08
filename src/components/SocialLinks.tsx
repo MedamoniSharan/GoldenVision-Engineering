@@ -63,25 +63,28 @@ const ICONS = {
   x: XIcon,
 } as const;
 
-export default function SocialLinks({ className = '' }: { className?: string }) {
+export default function SocialLinks() {
   return (
-    <ul className={`footer-social list-unstyled ${className}`.trim()}>
-      {SOCIAL_LINKS.map((social) => {
-        const Icon = ICONS[social.icon];
-        return (
-          <li key={social.label}>
-            <a
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
-              className="footer-social-link"
-            >
-              <Icon />
-            </a>
-          </li>
-        );
-      })}
-    </ul>
+    <nav className="social-rail" aria-label="Social media">
+      <ul className="social-rail-list">
+        {SOCIAL_LINKS.map((social) => {
+          const Icon = ICONS[social.icon];
+          return (
+            <li key={social.label}>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                title={social.label}
+                className="social-rail-link"
+              >
+                <Icon />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
