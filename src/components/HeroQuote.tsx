@@ -29,7 +29,7 @@ export default function HeroQuote() {
         <div className="hero-quote-copy">
           <h1 className="hero-quote-brand">
             <span className="hero-quote-brand-gold">Golden Vision</span>{' '}
-            <span className="hero-quote-brand-blue">Engineering</span>
+            <span className="hero-quote-brand-white">Engineering</span>
           </h1>
           <p className="hero-quote-lead">
             Your new destination to steel detailing service as describing us

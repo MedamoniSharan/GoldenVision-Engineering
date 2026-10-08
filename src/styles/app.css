@@ -36,6 +36,57 @@
 
 /* React-specific overrides and additions */
 
+:root {
+  --gv-gold: #d4af37;
+  --gv-gold-light: #f2d57e;
+  --gv-gold-deep: #a67c1b;
+  --gv-gold-gradient: linear-gradient(135deg, #f2d57e 0%, #d4af37 45%, #a67c1b 100%);
+  --gv-white: #ffffff;
+  --gv-text: #d3d8df;
+  --gv-text-muted: #98a2ae;
+  --gv-line: rgba(212, 175, 55, 0.28);
+  --gv-bg-navbar: #05070a;
+  --gv-bg-hero: #090c12;
+  --gv-bg-about: #0e1219;
+  --gv-bg-services: #0a0f16;
+  --gv-bg-careers: #111720;
+  --gv-bg-footer: #05070a;
+  --gv-surface: #161c26;
+  --gv-surface-raised: #1d2531;
+  --gv-input: #0b0f15;
+  --gv-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --gv-font-body: 'Manrope', sans-serif;
+}
+
+body,
+#scroll-content {
+  background: var(--gv-bg-navbar);
+  color: var(--gv-text);
+  font-family: var(--gv-font-body);
+}
+
+/* Every section heading shares one serif scale, white text, gold accent words and a gold rule. */
+.steel-title,
+.featured-services .section-heading-lg,
+.careers-title {
+  font-family: var(--gv-font-display) !important;
+  font-size: clamp(2rem, 3.4vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.01em;
+  color: var(--gv-white) !important;
+}
+
+.featured-services .section-heading-lg::after,
+.careers-title::after {
+  content: '';
+  display: block;
+  width: 78px;
+  height: 3px;
+  margin-top: 16px;
+  background: var(--gv-gold-gradient);
+}
+
 #root {
   min-height: 100vh;
 }
@@ -85,8 +136,8 @@ html {
   height: 72px;
   min-height: 72px;
   transform: none !important;
-  background: #0c0c0c;
-  border-bottom: 1px solid rgba(201, 162, 39, 0.4);
+  background: var(--gv-bg-navbar);
+  border-bottom: 1px solid var(--gv-line);
   border-radius: 0;
   padding: 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
@@ -178,8 +229,8 @@ html {
 }
 
 .gv-nav-link:hover {
-  color: #c9a227 !important;
-  background: rgba(201, 162, 39, 0.12) !important;
+  color: var(--gv-gold-light) !important;
+  background: rgba(212, 175, 55, 0.12) !important;
 }
 
 .gv-nav-dropdown {
@@ -207,8 +258,8 @@ html {
   margin: 0 !important;
   padding: 10px !important;
   list-style: none !important;
-  background: #111214;
-  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: var(--gv-input);
+  border: 1px solid var(--gv-line);
   border-radius: 12px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
   opacity: 0;
@@ -259,7 +310,7 @@ html {
   display: block;
   padding: 10px 14px;
   border-radius: 8px;
-  color: #e7e7e7 !important;
+  color: var(--gv-text) !important;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
@@ -271,8 +322,8 @@ html {
 
 .gv-nav-sublink:hover,
 .gv-nav-sublink:focus-visible {
-  color: #c9a227 !important;
-  background: rgba(201, 162, 39, 0.12);
+  color: var(--gv-gold-light) !important;
+  background: rgba(212, 175, 55, 0.12);
   outline: none;
 }
 
@@ -291,7 +342,7 @@ html {
   padding: 2px 0 8px 12px !important;
   background: transparent;
   border: 0;
-  border-left: 1px solid rgba(201, 162, 39, 0.35);
+  border-left: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: 0;
   box-shadow: none;
   opacity: 1;
@@ -316,7 +367,7 @@ html {
   height: 38px;
   padding: 0 18px;
   border-radius: 999px;
-  background: #c9a227;
+  background: var(--gv-gold);
   color: #0c0c0c !important;
   font-size: 12px;
   font-weight: 700;
@@ -361,7 +412,7 @@ html {
   z-index: 1100 !important;
   width: min(86vw, 360px) !important;
   height: 100% !important;
-  background: #0c0c0c !important;
+  background: var(--gv-bg-navbar) !important;
   color: #fff;
   padding: 28px 24px !important;
   overflow: auto;
@@ -489,7 +540,7 @@ header.hero-header {
   font-size: 10px;
   font-weight: 500;
   line-height: 1.3;
-  color: #c9a227;
+  color: var(--gv-gold);
   max-width: 170px;
   letter-spacing: 0.2px;
 }
@@ -669,9 +720,9 @@ button.aiana-button.contactbutton:hover {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 20%, rgba(201, 162, 39, 0.12), transparent 42%),
-    radial-gradient(circle at 88% 80%, rgba(0, 128, 194, 0.1), transparent 45%),
-    #ffffff;
+    radial-gradient(circle at 14% 22%, rgba(212, 175, 55, 0.16), transparent 42%),
+    radial-gradient(circle at 86% 78%, rgba(212, 175, 55, 0.08), transparent 45%),
+    var(--gv-bg-hero);
 }
 
 .hero-quote::before {
@@ -679,9 +730,9 @@ button.aiana-button.contactbutton:hover {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
   -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 60%);
   mask-image: linear-gradient(90deg, #000 0%, transparent 60%);
   pointer-events: none;
@@ -702,121 +753,149 @@ button.aiana-button.contactbutton:hover {
 
 .hero-quote-brand {
   margin: 0 0 28px !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(30px, 4.2vw, 52px) !important;
-  font-weight: 800 !important;
+  font-family: var(--gv-font-display);
+  font-size: clamp(34px, 4.6vw, 58px) !important;
+  font-weight: 700 !important;
   line-height: 1.1 !important;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .hero-quote-brand-gold {
-  color: #e0a800;
+  background: var(--gv-gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
-.hero-quote-brand-blue {
-  color: #2f6fd1;
+.hero-quote-brand-white {
+  color: var(--gv-white);
 }
 
 .hero-quote-lead {
   max-width: 560px;
-  margin: 0 0 10px !important;
+  margin: 0 0 16px !important;
   font-size: 20px !important;
-  line-height: 1.55 !important;
-  color: #1f2933 !important;
+  line-height: 1.6 !important;
+  color: var(--gv-text) !important;
 }
 
 .hero-quote-tagline {
   margin: 0 !important;
-  font-size: 20px !important;
-  font-weight: 600;
-  line-height: 1.55 !important;
-  color: #1f2933 !important;
+  padding-left: 18px;
+  border-left: 3px solid var(--gv-gold);
+  font-family: var(--gv-font-display);
+  font-size: 22px !important;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5 !important;
+  color: var(--gv-gold-light) !important;
 }
 
-.hero-quote-form {
+/* Shared dark form card for the hero quote form and the careers application form. */
+.hero-quote-form,
+.careers-form {
   display: flex;
   flex-direction: column;
   padding: 32px;
-  background: #ffffff;
-  border: 1px solid #e6e9ee;
-  border-radius: 18px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  background: linear-gradient(180deg, var(--gv-surface-raised) 0%, var(--gv-surface) 100%);
+  border: 1px solid var(--gv-line);
+  border-top: 3px solid var(--gv-gold);
+  border-radius: 16px;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
 }
 
 .hero-quote-form h2 {
   margin: 0 !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: 22px !important;
+  font-family: var(--gv-font-display);
+  font-size: 26px !important;
   font-weight: 700 !important;
-  line-height: 1.3 !important;
-  color: #0f172a !important;
+  line-height: 1.25 !important;
+  color: var(--gv-white) !important;
 }
 
 .hero-quote-form-sub {
-  margin: 6px 0 22px !important;
+  margin: 8px 0 22px !important;
   font-size: 14px !important;
-  line-height: 1.5 !important;
-  color: #64748b !important;
+  line-height: 1.55 !important;
+  color: var(--gv-text-muted) !important;
 }
 
-.hero-quote-form label {
+.hero-quote-form label,
+.careers-form label {
   margin: 0 0 6px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #0f172a;
+  color: var(--gv-gold-light);
 }
 
-.hero-quote-form input {
+.hero-quote-form input,
+.careers-form input,
+.careers-form textarea {
   width: 100%;
   height: 46px;
   margin: 0 0 16px;
   padding: 0 14px;
+  font-family: var(--gv-font-body);
   font-size: 15px;
-  color: #0f172a;
-  background: #f5f7fa;
-  border: 1px solid #e3e7ed;
+  color: var(--gv-white);
+  background: var(--gv-input);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero-quote-form input:focus {
-  background: #ffffff;
-  border-color: #38b6f0;
-  box-shadow: 0 0 0 3px rgba(56, 182, 240, 0.2);
+.hero-quote-form input::placeholder,
+.careers-form input::placeholder,
+.careers-form textarea::placeholder {
+  color: #6b7480;
 }
 
-.hero-quote-form button {
+.hero-quote-form input:focus,
+.careers-form input:focus,
+.careers-form textarea:focus {
+  border-color: var(--gv-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.hero-quote-form button,
+.careers-form button {
   height: 50px;
   margin-top: 8px;
+  padding: 0 28px;
   border: 0;
   border-radius: 999px;
-  background: #0ea5e9;
-  color: #ffffff;
+  background: var(--gv-gold-gradient);
+  color: #0b0f15;
+  font-family: var(--gv-font-body);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-.hero-quote-form button:hover {
-  background: #0284c7;
+.hero-quote-form button:hover,
+.careers-form button:hover {
+  filter: brightness(1.08);
   transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(212, 175, 55, 0.38);
 }
 
 .hero-quote-sent {
   margin: 14px 0 0 !important;
   font-size: 13px !important;
   line-height: 1.5 !important;
-  color: #475569 !important;
+  color: var(--gv-text-muted) !important;
 }
 
 .hero-quote-sent a {
-  color: #0284c7;
+  color: var(--gv-gold-light);
 }
 
 @media (max-width: 900px) {
@@ -827,12 +906,16 @@ button.aiana-button.contactbutton:hover {
     padding: 56px 20px;
   }
 
-  .hero-quote-lead,
-  .hero-quote-tagline {
+  .hero-quote-lead {
     font-size: 17px !important;
   }
 
-  .hero-quote-form {
+  .hero-quote-tagline {
+    font-size: 19px !important;
+  }
+
+  .hero-quote-form,
+  .careers-form {
     padding: 24px;
   }
 }
@@ -937,7 +1020,11 @@ button.aiana-button.contactbutton:hover {
 }
 
 .accent {
-  color: #0081c2;
+  background: var(--gv-gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-heading {
@@ -1073,16 +1160,19 @@ button.aiana-button.contactbutton:hover {
 
 /* Featured services: tab strip with a drop-down details panel */
 .featured-services {
-  padding: 4.5rem 0;
-  background: linear-gradient(180deg, #091f2a 0%, #0d2a38 100%);
+  padding: 88px 0;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(212, 175, 55, 0.08), transparent 38%),
+    linear-gradient(180deg, var(--gv-bg-services) 0%, #0d131c 100%);
 }
 
 .featured-services-header {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .featured-services .section-heading-lg {
-  color: #ffffff;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .services-tabs {
@@ -1104,13 +1194,13 @@ button.aiana-button.contactbutton:hover {
   margin: 0;
   padding: 16px 12px;
   border: 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  border-right: 1px solid rgba(212, 175, 55, 0.16);
   border-radius: 0;
-  background: #2b3846;
-  color: #e6eaee;
-  font-family: 'Manrope', sans-serif;
+  background: var(--gv-surface);
+  color: var(--gv-text);
+  font-family: var(--gv-font-display);
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
   text-align: center;
   cursor: pointer;
@@ -1127,21 +1217,21 @@ button.aiana-button.contactbutton:hover {
 }
 
 .featured-services .services-tab:hover {
-  background: #3a4a5c;
-  color: #ffffff;
+  background: var(--gv-surface-raised);
+  color: var(--gv-gold-light);
 }
 
 .featured-services .services-tab:focus-visible {
-  outline: 3px solid rgba(224, 168, 0, 0.6);
+  outline: 3px solid rgba(212, 175, 55, 0.6);
   outline-offset: -3px;
 }
 
 .featured-services .is-open .services-tab {
   min-height: 124px;
-  background: #e0a800;
-  color: #0b1118;
+  background: var(--gv-gold-gradient);
+  color: #0b0f15;
   border-radius: 10px 10px 0 0;
-  box-shadow: 0 -8px 24px rgba(224, 168, 0, 0.25);
+  box-shadow: 0 -8px 26px rgba(212, 175, 55, 0.25);
 }
 
 .services-tab-panel {
@@ -1162,9 +1252,10 @@ button.aiana-button.contactbutton:hover {
 }
 
 .services-tab-panel-content {
-  padding: 32px 36px 36px;
-  background: #ffffff;
-  border-top: 4px solid #e0a800;
+  padding: 34px 38px 38px;
+  background: linear-gradient(180deg, var(--gv-surface-raised) 0%, var(--gv-surface) 100%);
+  border: 1px solid var(--gv-line);
+  border-top: 4px solid var(--gv-gold);
   border-radius: 0 0 14px 14px;
   opacity: 0;
   transform: translateY(-14px);
@@ -1178,32 +1269,32 @@ button.aiana-button.contactbutton:hover {
 }
 
 .services-tab-panel-content h3 {
-  margin: 0 0 6px !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  color: #0b1118 !important;
+  margin: 0 0 8px !important;
+  font-family: var(--gv-font-display);
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: var(--gv-white) !important;
 }
 
 .services-tab-panel-content p {
   margin: 0 0 12px !important;
   max-width: 900px;
   font-size: 16px !important;
-  line-height: 1.7 !important;
-  color: #4b5563 !important;
+  line-height: 1.75 !important;
+  color: var(--gv-text) !important;
 }
 
 .services-tab-panel-content .services-tab-summary {
   font-size: 17px !important;
-  font-weight: 700;
-  color: #b88a00 !important;
+  font-weight: 600;
+  color: var(--gv-gold-light) !important;
 }
 
 .services-tab-features {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 32px;
-  margin: 18px 0 0;
+  gap: 12px 32px;
+  margin: 20px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1213,7 +1304,7 @@ button.aiana-button.contactbutton:hover {
   padding-left: 26px;
   font-size: 16px;
   line-height: 1.5;
-  color: #1f2933;
+  color: var(--gv-white);
 }
 
 .services-tab-features li::before {
@@ -1221,7 +1312,7 @@ button.aiana-button.contactbutton:hover {
   position: absolute;
   left: 0;
   top: 0;
-  color: #e0a800;
+  color: var(--gv-gold);
   font-weight: 800;
 }
 
@@ -1260,7 +1351,7 @@ button.aiana-button.contactbutton:hover {
   }
 
   .services-tab-panel-content h3 {
-    font-size: 21px !important;
+    font-size: 22px !important;
   }
 
   .services-tab-features {
@@ -1361,9 +1452,20 @@ button.aiana-button.contactbutton:hover {
 }
 
 /* Footer */
+.footer-class {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: var(--gv-bg-footer);
+}
+
 .site-footer {
-  background: #0b1118;
-  padding: 3.75rem 0 0;
+  margin: 0 !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
+    var(--gv-bg-footer);
+  border-top: 1px solid var(--gv-line);
+  border-radius: 0 !important;
+  padding: 4rem 0 0;
 }
 
 .footer-main {
@@ -1398,28 +1500,33 @@ button.aiana-button.contactbutton:hover {
 
 .footer-brand-name {
   margin: 0 0 0.5rem !important;
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--gv-font-display);
   font-size: 2rem !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   line-height: 1.12 !important;
-  letter-spacing: 0.3px;
-  color: #e0a800 !important;
+  letter-spacing: 0.02em;
+  color: var(--gv-white) !important;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.footer-brand-name span:last-child {
-  color: #ffffff;
+.footer-brand-name span:first-child {
+  background: var(--gv-gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-brand-tagline {
   margin: 0 !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: 16px !important;
+  font-family: var(--gv-font-display);
+  font-size: 17px !important;
+  font-style: italic;
   font-weight: 500;
-  line-height: 1.55 !important;
-  color: #d7dde2 !important;
+  line-height: 1.5 !important;
+  color: var(--gv-gold-light) !important;
   max-width: 300px;
 }
 
@@ -1428,12 +1535,12 @@ button.aiana-button.contactbutton:hover {
 }
 
 .footer-heading {
-  color: #ffffff !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: 20px !important;
+  color: var(--gv-white) !important;
+  font-family: var(--gv-font-display);
+  font-size: 24px !important;
   font-weight: 700 !important;
   margin: 0 0 1.25rem !important;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.01em;
 }
 
 .footer-contact-list {
@@ -1451,8 +1558,8 @@ button.aiana-button.contactbutton:hover {
 
 .site-footer .footer-link,
 .site-footer .footer-link:visited {
-  color: #e6eaee !important;
-  font-family: 'Manrope', sans-serif;
+  color: var(--gv-text) !important;
+  font-family: var(--gv-font-body);
   font-size: 17px;
   font-weight: 500;
   line-height: 1.5;
@@ -1462,7 +1569,7 @@ button.aiana-button.contactbutton:hover {
 }
 
 .site-footer .footer-link:hover {
-  color: #e0a800 !important;
+  color: var(--gv-gold-light) !important;
 }
 
 .footer-contact-label {
@@ -1471,18 +1578,18 @@ button.aiana-button.contactbutton:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #e0a800;
+  color: var(--gv-gold);
   margin-bottom: 0.3rem;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(212, 175, 55, 0.16);
   margin-top: 3rem;
   padding: 1.25rem 0 1.5rem;
 }
 
 .footer-copyright {
-  color: #a8b2bb;
+  color: var(--gv-text-muted);
   font-size: 14px;
   text-align: center;
 }
@@ -1497,11 +1604,11 @@ button.aiana-button.contactbutton:hover {
   transform: translateY(-50%) !important;
   width: auto !important;
   padding: 10px 8px;
-  background: rgba(11, 17, 24, 0.92);
-  border: 1px solid rgba(224, 168, 0, 0.35);
+  background: rgba(5, 7, 10, 0.92);
+  border: 1px solid var(--gv-line);
   border-right: 0;
   border-radius: 14px 0 0 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .social-rail-list {
@@ -1520,15 +1627,16 @@ button.aiana-button.contactbutton:hover {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--gv-gold-light) !important;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.22);
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .social-rail-link:hover,
 .social-rail-link:focus-visible {
-  background: #e0a800;
-  color: #0b1118 !important;
+  background: var(--gv-gold-gradient);
+  color: #0b0f15 !important;
   transform: translateX(-3px);
   outline: none;
 }
@@ -1723,9 +1831,11 @@ button.aiana-button.contactbutton:hover {
 /* Steel welcome section */
 .steel-section {
   position: relative;
-  background: #ffffff;
-  padding: 5rem 0 5.5rem;
-  color: #1d3557;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(212, 175, 55, 0.08), transparent 40%),
+    var(--gv-bg-about);
+  padding: 88px 0;
+  color: var(--gv-text);
   overflow: hidden;
 }
 
@@ -1739,7 +1849,7 @@ button.aiana-button.contactbutton:hover {
   background-image: url('https://www.steelconstructiondetailing.com/assets/img/welcome-img-1.jpg');
   background-size: cover;
   background-position: left bottom;
-  opacity: 0.06;
+  opacity: 0.08;
   pointer-events: none;
   mask-image: linear-gradient(to right, #000 20%, transparent 90%);
 }
@@ -1763,14 +1873,8 @@ button.aiana-button.contactbutton:hover {
 }
 
 .steel-title {
-  margin: 0 0 1.35rem;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.3px;
+  margin: 0 0 1.5rem;
   text-transform: uppercase;
-  color: #163a5f;
 }
 
 .steel-title span {
@@ -1791,7 +1895,7 @@ button.aiana-button.contactbutton:hover {
   bottom: 0;
   width: 78px;
   height: 3px;
-  background: #f0b429;
+  background: var(--gv-gold-gradient);
 }
 
 .steel-description {
@@ -1802,10 +1906,10 @@ button.aiana-button.contactbutton:hover {
 
 .steel-description p {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
-  font-size: 15px;
-  line-height: 1.72;
-  color: #6b7280;
+  font-family: var(--gv-font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--gv-text);
 }
 
 .steel-media {
@@ -1821,7 +1925,8 @@ button.aiana-button.contactbutton:hover {
   margin: 0;
   overflow: hidden;
   border-radius: 0;
-  background: #e8edf2;
+  background: var(--gv-surface);
+  border: 1px solid var(--gv-line);
 }
 
 .steel-image img {
@@ -1853,10 +1958,10 @@ button.aiana-button.contactbutton:hover {
   min-height: 118px;
   padding: 1rem 0.75rem 0.9rem;
   transform: translate(-50%, -50%);
-  background: #1ea7e8;
-  color: #ffffff;
+  background: var(--gv-gold-gradient);
+  color: #0b0f15;
   text-align: center;
-  box-shadow: 0 10px 28px rgba(30, 167, 232, 0.35);
+  box-shadow: 0 14px 34px rgba(212, 175, 55, 0.35);
 }
 
 .experience-badge.is-counting {
@@ -1864,7 +1969,7 @@ button.aiana-button.contactbutton:hover {
 }
 
 .experience-badge strong {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--gv-font-display);
   font-size: 3.1rem;
   font-weight: 800;
   line-height: 0.9;
@@ -1896,7 +2001,7 @@ button.aiana-button.contactbutton:hover {
   line-height: 1.2;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #b8ecff;
+  color: #2b2106;
 }
 
 @media (max-width: 1100px) {
@@ -1975,9 +2080,11 @@ button.aiana-button.contactbutton:hover {
 }
 
 .careers-section {
-  background: #0b1118;
-  color: #f4f4f4;
-  padding: 80px 0;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.1), transparent 40%),
+    var(--gv-bg-careers);
+  color: var(--gv-text);
+  padding: 88px 0;
 }
 
 .careers-layout {
@@ -1988,16 +2095,10 @@ button.aiana-button.contactbutton:hover {
 }
 
 .careers-title {
-  margin: 0 0 28px !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(1.9rem, 3.4vw, 2.8rem) !important;
-  font-weight: 800 !important;
-  line-height: 1.15 !important;
-  color: #ffffff !important;
+  margin: 0 0 32px !important;
 }
 
 .careers-title .accent {
-  color: #e0a800 !important;
   text-transform: uppercase;
 }
 
@@ -2006,113 +2107,70 @@ button.aiana-button.contactbutton:hover {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
 .careers-list li {
   position: relative;
-  padding-left: 26px;
-  font-family: 'Manrope', sans-serif;
+  padding-left: 28px;
+  font-family: var(--gv-font-body);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
-  color: #e6eaee;
+  color: var(--gv-white);
 }
 
 .careers-list li::before {
   content: '';
   position: absolute;
-  top: 0.6em;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #e0a800;
-}
-
-.careers-form {
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-}
-
-.careers-form label {
-  margin: 0 0 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.careers-form input,
-.careers-form textarea {
-  width: 100%;
-  margin: 0 0 16px;
-  padding: 0 14px;
-  font-size: 15px;
-  color: #0f172a;
-  background: #f5f7fa;
-  border: 1px solid #e3e7ed;
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.careers-form input {
-  height: 46px;
+  top: 0.55em;
+  left: 2px;
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  background: var(--gv-gold-gradient);
+  transform: rotate(45deg);
 }
 
 .careers-form textarea {
+  height: auto;
   min-height: 104px;
   padding: 12px 14px;
   resize: vertical;
-}
-
-.careers-form input:focus,
-.careers-form textarea:focus {
-  background: #ffffff;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
 }
 
 .careers-form .careers-file {
   height: auto;
   padding: 10px 12px;
   font-size: 14px;
+  color: var(--gv-text-muted);
+  cursor: pointer;
+}
+
+.careers-form .careers-file::file-selector-button {
+  margin-right: 12px;
+  padding: 6px 14px;
+  border: 1px solid var(--gv-gold);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--gv-gold-light);
+  font-weight: 700;
   cursor: pointer;
 }
 
 .careers-form button {
   align-self: flex-start;
-  height: 46px;
-  margin-top: 4px;
-  padding: 0 26px;
-  border: 0;
-  border-radius: 10px;
-  background: #2563eb;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.careers-form button:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
 }
 
 .careers-form-status {
   margin: 14px 0 0 !important;
   font-size: 14px !important;
   line-height: 1.5 !important;
-  color: #15803d !important;
+  color: #86efac !important;
 }
 
 .careers-form-status.is-error {
-  color: #b91c1c !important;
+  color: #fca5a5 !important;
 }
 
 .careers-form-status a {
@@ -2136,10 +2194,6 @@ button.aiana-button.contactbutton:hover {
   .careers-layout {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-
-  .careers-form {
-    padding: 24px;
   }
 }
 
