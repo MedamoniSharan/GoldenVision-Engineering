@@ -27,13 +27,13 @@ export const businessServices: BusinessService[] = [
     ],
   },
   {
-    id: 'miscellaneous-steel-detailing',
-    title: 'Miscellaneous Steel Detailing',
+    id: 'miscellaneous-steel-design',
+    title: 'Miscellaneous Steel Design',
     summary: 'Complete misc metals packages for stairs, rails, platforms, and more.',
     description:
       'From stairs and handrails to ladders, platforms, and embed plates — we detail every miscellaneous steel component with Tekla precision for coordinated delivery.',
     image: remoteAsset('assets/images/Misc.png'),
-    href: '#miscellaneous-steel-detailing',
+    href: '#miscellaneous-steel-design',
     features: [
       'Stair, railing & ladder detailing',
       'Platforms, mezzanines & catwalks',
@@ -44,13 +44,13 @@ export const businessServices: BusinessService[] = [
     ],
   },
   {
-    id: 'connection-designing',
-    title: 'Connection Designing',
+    id: 'connection-design',
+    title: 'Connection Design',
     summary: 'Engineered connections built for strength, safety, and constructability.',
     description:
       'Our connection design team develops moment, shear, brace, and base plate solutions — modeled and validated in Tekla for seamless integration with your structural package.',
     image: remoteAsset('assets/images/Civil-Project.png'),
-    href: '#connection-designing',
+    href: '#connection-design',
     features: [
       'Moment & shear connection design',
       'Brace and gusset connections',
@@ -61,13 +61,14 @@ export const businessServices: BusinessService[] = [
     ],
   },
   {
-    id: 'pemb-designing-drafting',
-    title: 'PEMB Designing and Drafting',
-    summary: 'Pre-engineered metal building design and drafting for fast-track projects.',
+    id: 'pemb-design-detailing',
+    title: 'PEMB Design / Detailing',
+    summary:
+      'We provide professional Pre-Engineered Metal Building (PEMB) design, engineering support and structural steel detailing services for fabricators, contractors, manufacturers and engineering firms.',
     description:
-      'We provide PEMB layout, framing, purlin/girt detailing, and foundation reaction documentation — leveraging Tekla for accurate, buildable pre-engineered building packages.',
+      'Our team supports projects from initial design through fabrication-ready detailing, with a strong focus on accuracy, constructability, coordination and schedule.',
     image: remoteAsset('assets/images/Pre-Engineered-6.png'),
-    href: '#pemb-designing-drafting',
+    href: '#pemb-design-detailing',
     features: [
       'PEMB layout & framing plans',
       'Purlin, girt & eave strut detailing',

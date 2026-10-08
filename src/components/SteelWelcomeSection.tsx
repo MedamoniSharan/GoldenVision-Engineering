@@ -5,7 +5,7 @@ const copy = {
   title: 'Know Us',
   body: [
     'Golden Vision Engineering is a structural engineering and detailing service provider focused on delivering reliable, precise, and efficient solutions for North American steel construction projects.',
-    'Our expertise spans Structural Steel Detailing, Connection Design, Miscellaneous Steel, PEMB Design & Drafting, BIM Integration, Estimation, and more. We leverage advanced tools, industry best practices, and proven techniques to support projects from design through fabrication and erection in alignment with applicable AISC, NISD, OSHA, and IBC requirements, with a strong emphasis on accuracy, safety, constructability, and quality.',
+    'Our expertise spans Structural Steel Detailing, Connection Design, Miscellaneous Steel Design, PEMB Design / Detailing, BIM Integration, Estimation, and more. We leverage advanced tools, industry best practices, and proven techniques to support projects from design through fabrication and erection in alignment with applicable AISC, NISD, OSHA, and IBC requirements, with a strong emphasis on accuracy, safety, constructability, and quality.',
     'At Golden Vision Engineering, our goal is simple: to provide dependable engineering and detailing solutions that help our clients execute North American steel projects with confidence.',
   ],
 } as const;

@@ -3,7 +3,7 @@ export const SITE_NAME = 'GOLDEN VISION ENGINEERING';
 export const SITE_TAGLINE = 'Where Vision in Detailing meets Golden Standards';
 
 export const SITE_DESCRIPTION =
-  'Golden Vision Engineering — Tekla-powered structural steel detailing, connection design, miscellaneous metals, PEMB design & drafting, BIM integration, and estimation. Where vision in detailing meets golden standards.';
+  'Golden Vision Engineering — Tekla-powered structural steel detailing, connection design, miscellaneous steel design, PEMB design & detailing, BIM integration, and estimation. Where vision in detailing meets golden standards.';
 
 export const CONTACT_PHONE = '+1 (945) 327 2223';
 export const CONTACT_PHONE_HREF = 'tel:+19453272223';
