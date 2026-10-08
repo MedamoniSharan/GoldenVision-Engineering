@@ -65,8 +65,9 @@ const ICONS = {
 
 export default function SocialLinks() {
   return (
-    <nav className="social-rail" aria-label="Social media">
-      <ul className="social-rail-list">
+    <div className="footer-social">
+      <span className="footer-contact-label">Follow Us</span>
+      <ul className="footer-social-list" aria-label="Social media">
         {SOCIAL_LINKS.map((social) => {
           const Icon = ICONS[social.icon];
           return (
@@ -77,7 +78,7 @@ export default function SocialLinks() {
                 rel="noopener noreferrer"
                 aria-label={social.label}
                 title={social.label}
-                className="social-rail-link"
+                className="footer-social-link"
               >
                 <Icon />
               </a>
@@ -85,6 +86,6 @@ export default function SocialLinks() {
           );
         })}
       </ul>
-    </nav>
+    </div>
   );
 }

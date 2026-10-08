@@ -7,6 +7,7 @@ import {
   SITE_TAGLINE,
 } from '@/data/siteConfig';
 import { LOGO_SRC } from '@/utils/assets';
+import SocialLinks from '@/components/SocialLinks';
 
 export default function Footer() {
   return (
@@ -62,6 +63,7 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
+              <SocialLinks />
             </div>
           </div>
         </div>

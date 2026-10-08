@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const MEDIA =
-  '.steel-image img, .highlight-image img';
+  '.highlight-image img';
 
 export function useSiteParallax() {
   useEffect(() => {

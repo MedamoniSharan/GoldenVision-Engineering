@@ -12,6 +12,7 @@ export const mainNavigation: NavLink[] = [
       href: service.href,
     })),
   },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Careers', href: '#careers' },
   { label: 'Contact Us', href: '#contact' },
 ];

@@ -5,3 +5,5 @@ node_modules
 tsconfig.tsbuildinfo
 .env
 .env.*
+# Original high-res gallery sources; optimized copies live in public/assets/images/gallery
+/public/Gallery

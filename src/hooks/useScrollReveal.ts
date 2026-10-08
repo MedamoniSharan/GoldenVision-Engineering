@@ -5,6 +5,8 @@ const REVEAL_SELECTORS = [
   '.steel-media',
   '.featured-services-header',
   '.services-tabs',
+  '.gallery-header',
+  '.gallery-grid > li',
   '.careers-title',
   '.careers-list > li',
   '.careers-form',

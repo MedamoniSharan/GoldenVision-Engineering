@@ -14,6 +14,7 @@ export default function SteelWelcomeSection() {
   const [countVisible, setCountVisible] = useState(false);
   const badgeRef = useRef<HTMLDivElement>(null);
   const years = useCounter(17, 1600, countVisible);
+  const projects = useCounter(150, 1800, countVisible);
 
   useEffect(() => {
     const el = badgeRef.current;
@@ -50,32 +51,35 @@ export default function SteelWelcomeSection() {
           </div>
 
           <div className="steel-media">
-            <figure className="steel-image steel-image-one">
+            <figure className="steel-image">
               <img
-                src="https://www.steelconstructiondetailing.com/assets/img/welcome-img-1.jpg"
-                alt="Steel construction detailers reviewing a structural project"
+                src="/assets/images/know-us-steel-model.jpg"
+                alt="3D steel model of platforms, walkways, stairs and pipe racks detailed by Golden Vision Engineering"
                 loading="lazy"
               />
             </figure>
 
-            <figure className="steel-image steel-image-two">
-              <img
-                src="https://www.steelconstructiondetailing.com/assets/img/welcome-img-2.jpg"
-                alt="Steel structure detail drawing and construction work"
-                loading="lazy"
-              />
-            </figure>
-
-            <div
-              ref={badgeRef}
-              className={`experience-badge${countVisible ? ' is-counting' : ''}`}
-              aria-label="17 plus years experience"
-            >
-              <strong>
-                {years}
-                <span>+</span>
-              </strong>
-              <span>Years Experience</span>
+            <div ref={badgeRef} className="steel-stats">
+              <div
+                className={`experience-badge${countVisible ? ' is-counting' : ''}`}
+                aria-label="17 plus years experience"
+              >
+                <strong>
+                  {years}
+                  <span>+</span>
+                </strong>
+                <span>Years Experience</span>
+              </div>
+              <div
+                className={`experience-badge${countVisible ? ' is-counting' : ''}`}
+                aria-label="150 plus projects completed"
+              >
+                <strong>
+                  {projects}
+                  <span>+</span>
+                </strong>
+                <span>Projects Completed</span>
+              </div>
             </div>
           </div>
         </div>
