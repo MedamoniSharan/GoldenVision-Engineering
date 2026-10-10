@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useCounter } from '@/hooks/useCounter';
 
 const copy = {
-  title: 'Know Us',
+  title: 'About Us',
   body: [
     'Golden Vision Engineering is a structural engineering and detailing service provider focused on delivering reliable, precise, and efficient solutions for North American steel construction projects.',
     'Our expertise spans Structural Steel Detailing, Connection Design, Miscellaneous Steel Design, PEMB Design / Detailing, BIM Integration, Estimation, and more. We leverage advanced tools, industry best practices, and proven techniques to support projects from design through fabrication and erection in alignment with applicable AISC, NISD, OSHA, and IBC requirements, with a strong emphasis on accuracy, safety, constructability, and quality.',

@@ -22,15 +22,15 @@ export const businessServices: BusinessService[] = [
       'Shop & erection drawings',
       'Assembly and single-part drawings',
       'Anchor bolt and embed plans',
-      'CNC / N/C file export for fabrication',
-      'AISC, AWS & project-specific standards',
+      'CNC/NC File Export for Fabrication',
+      'Applicable AISC, AWS and Project-Specific Requirements',
     ],
   },
   {
     id: 'connection-misc-steel-design',
     title: 'Connection Design and Miscellaneous Steel Design',
     summary:
-      'Engineered connections and complete miscellaneous steel packages built for strength, safety, and constructability.',
+      'Engineered connections and complete miscellaneous steel detailing packages built for strength, safety, and constructability.',
     description:
       'Our team develops moment, shear, brace, and base plate connections and designs stairs, handrails, ladders, platforms, and embed plates — modeled and validated in Tekla for seamless integration with your structural package.',
     image: remoteAsset('assets/images/Civil-Project.png'),
@@ -110,7 +110,7 @@ export const businessServices: BusinessService[] = [
       'Roof & floor deck layouts',
       'Bridging & bracing details',
       'Deck openings, edges & reinforcement',
-      'SJI & SDI standards compliance',
+      'Coordination with Applicable SJI and SDI Standards',
     ],
   },
 ];

@@ -32,7 +32,7 @@ export default function HeroQuote() {
             <span className="hero-quote-brand-white">Engineering</span>
           </h1>
           <p className="hero-quote-lead">
-            Your new destination to steel detailing service as describing us
+            Your Trusted Partner for Structural Steel Detailing and Engineering Services
           </p>
           <p className="hero-quote-tagline">“{SITE_TAGLINE}”</p>
         </div>
