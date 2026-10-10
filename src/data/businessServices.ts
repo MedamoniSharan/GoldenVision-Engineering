@@ -27,37 +27,21 @@ export const businessServices: BusinessService[] = [
     ],
   },
   {
-    id: 'miscellaneous-steel-design',
-    title: 'Miscellaneous Steel Design',
-    summary: 'Complete misc metals packages for stairs, rails, platforms, and more.',
+    id: 'connection-misc-steel-design',
+    title: 'Connection Design and Miscellaneous Steel Design',
+    summary:
+      'Engineered connections and complete miscellaneous steel packages built for strength, safety, and constructability.',
     description:
-      'From stairs and handrails to ladders, platforms, and embed plates — we detail every miscellaneous steel component with Tekla precision for coordinated delivery.',
-    image: remoteAsset('assets/images/Misc.png'),
-    href: '#miscellaneous-steel-design',
-    features: [
-      'Stair, railing & ladder detailing',
-      'Platforms, mezzanines & catwalks',
-      'Embed plates & loose items',
-      'Grating and floor plate layouts',
-      'Misc metals BOM & material lists',
-      'Coordinated with main structure',
-    ],
-  },
-  {
-    id: 'connection-design',
-    title: 'Connection Design',
-    summary: 'Engineered connections built for strength, safety, and constructability.',
-    description:
-      'Our connection design team develops moment, shear, brace, and base plate solutions — modeled and validated in Tekla for seamless integration with your structural package.',
+      'Our team develops moment, shear, brace, and base plate connections and designs stairs, handrails, ladders, platforms, and embed plates — modeled and validated in Tekla for seamless integration with your structural package.',
     image: remoteAsset('assets/images/Civil-Project.png'),
-    href: '#connection-design',
+    href: '#connection-misc-steel-design',
     features: [
       'Moment & shear connection design',
-      'Brace and gusset connections',
-      'Base plate & anchor rod design',
+      'Brace, gusset & base plate design',
       'Delegated connection engineering',
-      'Tekla connection detailing modules',
-      'Design calculation support',
+      'Stair, railing & ladder design',
+      'Platforms, mezzanines & catwalks',
+      'Embed plates, grating & loose items',
     ],
   },
   {
