@@ -68,6 +68,9 @@ export default function CareersSection() {
             type="tel"
             placeholder="Your phone number"
             autoComplete="tel"
+            defaultValue="+1 "
+            pattern="\+?[0-9][0-9 \-\(\)]{6,}"
+            title="Please enter your phone number, including the country code"
             required
           />
 

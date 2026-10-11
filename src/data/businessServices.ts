@@ -14,16 +14,33 @@ export const businessServices: BusinessService[] = [
     title: 'Structural Steel Detailing',
     summary: 'End-to-end detailing for fabrication-ready structural steel packages.',
     description:
-      'We deliver accurate shop drawings, erection plans, and fabrication details using Tekla Structures — ensuring every member, bolt, and weld is documented for flawless field execution.',
+      'We deliver accurate shop drawings, erection plans, and fabrication details using Tekla Structures & SDS/2 — ensuring every member, bolt, and weld is documented for flawless field execution.',
     image: remoteAsset('assets/images/Steel-Detailing.png'),
     href: '#structural-steel-detailing',
     features: [
-      '3D modeling in Tekla Structures',
+      '3D modeling in Tekla Structures & SDS/2',
       'Shop & erection drawings',
       'Assembly and single-part drawings',
       'Anchor bolt and embed plans',
       'CNC/NC File Export for Fabrication',
       'Applicable AISC, AWS and Project-Specific Requirements',
+    ],
+  },
+  {
+    id: 'miscellaneous-steel-detailing',
+    title: 'Miscellaneous Steel Detailing',
+    summary: 'Complete miscellaneous steel detailing packages for stairs, rails, platforms, and more.',
+    description:
+      'From stairs and handrails to ladders, platforms, and embed plates — we detail every miscellaneous steel component with Tekla Structures & SDS/2 precision for coordinated delivery.',
+    image: remoteAsset('assets/images/Misc.png'),
+    href: '#miscellaneous-steel-detailing',
+    features: [
+      'Stair, railing & ladder detailing',
+      'Platforms, mezzanines & catwalks',
+      'Embed plates & loose items',
+      'Grating and floor plate layouts',
+      'Miscellaneous steel BOM & material lists',
+      'Coordinated with main structure',
     ],
   },
   {
@@ -43,6 +60,7 @@ export const businessServices: BusinessService[] = [
       'Delegated connection engineering',
       'Tekla connection detailing modules',
       'Design calculation support',
+      'Seal and stamp of the Licensed Professional Engineers from 45+ states in USA',
     ],
   },
   {

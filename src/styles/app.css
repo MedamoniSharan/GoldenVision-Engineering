@@ -809,19 +809,12 @@ button.aiana-button.contactbutton:hover {
 }
 
 .hero-quote-form h2 {
-  margin: 0 !important;
+  margin: 0 0 22px !important;
   font-family: var(--gv-font-display);
   font-size: 26px !important;
   font-weight: 700 !important;
   line-height: 1.25 !important;
   color: var(--gv-white) !important;
-}
-
-.hero-quote-form-sub {
-  margin: 8px 0 22px !important;
-  font-size: 14px !important;
-  line-height: 1.55 !important;
-  color: var(--gv-text-muted) !important;
 }
 
 .hero-quote-form label,
@@ -835,6 +828,7 @@ button.aiana-button.contactbutton:hover {
 }
 
 .hero-quote-form input,
+.hero-quote-form textarea,
 .careers-form input,
 .careers-form textarea {
   width: 100%;
@@ -852,12 +846,14 @@ button.aiana-button.contactbutton:hover {
 }
 
 .hero-quote-form input::placeholder,
+.hero-quote-form textarea::placeholder,
 .careers-form input::placeholder,
 .careers-form textarea::placeholder {
   color: #6b7480;
 }
 
 .hero-quote-form input:focus,
+.hero-quote-form textarea:focus,
 .careers-form input:focus,
 .careers-form textarea:focus {
   border-color: var(--gv-gold);
@@ -889,15 +885,10 @@ button.aiana-button.contactbutton:hover {
   box-shadow: 0 16px 34px rgba(212, 175, 55, 0.38);
 }
 
-.hero-quote-sent {
-  margin: 14px 0 0 !important;
-  font-size: 13px !important;
-  line-height: 1.5 !important;
-  color: var(--gv-text-muted) !important;
-}
-
-.hero-quote-sent a {
-  color: var(--gv-gold-light);
+.hero-quote-form button:disabled {
+  cursor: wait;
+  filter: saturate(0.6);
+  transform: none;
 }
 
 @media (max-width: 900px) {
@@ -2368,6 +2359,7 @@ button.aiana-button.contactbutton:hover {
   transform: rotate(45deg);
 }
 
+.hero-quote-form textarea,
 .careers-form textarea {
   height: auto;
   min-height: 104px;
@@ -2398,6 +2390,7 @@ button.aiana-button.contactbutton:hover {
   align-self: flex-start;
 }
 
+.hero-quote-status,
 .careers-form-status {
   margin: 14px 0 0 !important;
   font-size: 14px !important;
@@ -2405,6 +2398,7 @@ button.aiana-button.contactbutton:hover {
   color: #86efac !important;
 }
 
+.hero-quote-status.is-error,
 .careers-form-status.is-error {
   color: #fca5a5 !important;
 }
